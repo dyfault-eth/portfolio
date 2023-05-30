@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 
-export const Project = () => {
-    return(
+export const DiscordBot = () => {
+    return (
         <Box>
-            Project
+            discord bot
         </Box>
     )
 }
