@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, Text } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -9,10 +9,13 @@ export const Contact = () => {
 
     const [isHcaptchaVerified, setIsHcaptchaVerified] = useState(false);
     const [isSuccessSubmit, setIsSuccessSubmit] = useState(false);
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: {errors} } = useForm();
+    const toast = useToast({
+      position: 'top',
+    });
 
     const onSubmit = async (data) => {
-      if (isHcaptchaVerified) {
+      if (isHcaptchaVerified && isEmailError === false && isSubjectError === false) {
         emailjs.send(
           process.env.REACT_APP_MAIL_ID,
           process.env.REACT_APP_TEMP_ID,
@@ -25,8 +28,23 @@ export const Contact = () => {
         );
         setIsSuccessSubmit(true);
         reset();
+        toast({
+          title: "Success",
+          description: "Your message was successfully sent",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "cannot send your message please verify email, subject or captcha",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
       }
-};
+    };
 
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
@@ -56,12 +74,12 @@ export const Contact = () => {
   
     return (
       <Box>
-        <FormControl as="form" w="300px" isInvalid={isEmailError || isSubjectError} isRequired onSubmit={handleSubmit(onSubmit)}>
+        <FormControl as="form" w="300px" isInvalid={ isEmailError || errors.email || isSubjectError} isRequired onSubmit={handleSubmit(onSubmit)}>
           <FormLabel>Email</FormLabel>
           <Input {...register("email", { required: true })} type="email" value={email} onChange={handleEmailChange} placeholder="Your email" />
-          {isEmailError && (
-            <FormErrorMessage>Email is required and should be in the correct format</FormErrorMessage>
-          )}
+          {isEmailError ? (
+          <FormErrorMessage>Email is required and should be in the correct format</FormErrorMessage>
+        ) : ""}
   
           <FormLabel>Subject</FormLabel>
           <Input {...register("subject", { required: true })} placeholder="Subject" value={subject} onChange={handleSubjectChange} />
@@ -80,7 +98,6 @@ export const Contact = () => {
 
           <Button mt="8px" type="submit">Submit</Button>
         </FormControl>
-        {isSuccessSubmit ? <Text>Your message is successfully send</Text> : ""}
       </Box>
     );
   };
