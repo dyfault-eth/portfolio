@@ -1,7 +1,7 @@
 import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button } from "@chakra-ui/react";
 import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
-import HCaptcha from "react-hcaptcha";
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import emailjs from "@emailjs/browser"
 
 
@@ -69,11 +69,12 @@ export const Contact = () => {
   
           <FormLabel>Message</FormLabel>
           <Textarea {...register("message", { required: true })} h="150px" w="450px" size="lg" placeholder="Message" resize="both" />
-
-          <HCaptcha
-          sitekey={process.env.REACT_APP_SITE_KEY}
-          onVerify={handleHcaptchaVerify}
-        />
+          <Box mt="10px">
+            <HCaptcha
+            sitekey={process.env.REACT_APP_SITE_KEY}
+            onVerify={handleHcaptchaVerify}
+            />
+        </Box>
 
           <Button mt="8px" type="submit">Submit</Button>
         </FormControl>
