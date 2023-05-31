@@ -1,5 +1,5 @@
-import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button } from "@chakra-ui/react";
-import { useState, useRef } from "react";
+import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import emailjs from "@emailjs/browser"
@@ -8,7 +8,8 @@ import emailjs from "@emailjs/browser"
 export const Contact = () => {
 
     const [isHcaptchaVerified, setIsHcaptchaVerified] = useState(false);
-    const { register, handleSubmit } = useForm();
+    const [isSuccessSubmit, setIsSuccessSubmit] = useState(false);
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = async (data) => {
       if (isHcaptchaVerified) {
@@ -22,6 +23,8 @@ export const Contact = () => {
           },
           process.env.REACT_APP_API_KEY
         );
+        setIsSuccessSubmit(true);
+        reset();
       }
 };
 
@@ -48,7 +51,6 @@ export const Contact = () => {
     };
 
     const handleHcaptchaVerify = (token) => {
-      console.log("HCaptcha token:", token);
       setIsHcaptchaVerified(true);
     };
   
@@ -78,6 +80,7 @@ export const Contact = () => {
 
           <Button mt="8px" type="submit">Submit</Button>
         </FormControl>
+        {isSuccessSubmit ? <Text>Your message is successfully send</Text> : ""}
       </Box>
     );
   };
