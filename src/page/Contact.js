@@ -1,5 +1,5 @@
 import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useToast } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import emailjs from "@emailjs/browser"
@@ -9,7 +9,12 @@ export const Contact = () => {
 
     const [isHcaptchaVerified, setIsHcaptchaVerified] = useState(false);
     const [isSuccessSubmit, setIsSuccessSubmit] = useState(false);
-    const { register, handleSubmit, reset, formState: {errors} } = useForm();
+    const { register, handleSubmit, reset, formState: {errors} } = useForm({
+      defaultValues: {
+        email: "",
+        subject: "",
+      }
+    });
     const toast = useToast({
       position: 'top',
     });
@@ -27,6 +32,8 @@ export const Contact = () => {
           process.env.REACT_APP_API_KEY
         );
         setIsSuccessSubmit(true);
+        setEmail("");
+        setSubject("");
         reset();
         toast({
           title: "Success",
@@ -36,13 +43,13 @@ export const Contact = () => {
           isClosable: true,
         });
       } else {
-        toast({
-          title: "Error",
-          description: "cannot send your message please verify email, subject or captcha",
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
+          toast({
+            title: "Error",
+            description: "cannot send your message please verify email, subject or captcha",
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+          });
       }
     };
 
