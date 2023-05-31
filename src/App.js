@@ -6,7 +6,11 @@ import { NavButton } from './components/NavButton';
 import { ProjectsMenu } from './components/ProjectsMenu';
 import { ToggleColorMode } from './components/ToggleColorMode';
 import { Home } from './page/Home';
-import { DiscordBot } from './page/DiscordBot';
+import { JsDiscordBot } from './page/projects/js/JsDiscordBot';
+import { JsScript } from './page/projects/js/JsScript';
+import { Web3App } from './page/projects/js/Web3App';
+import { DebianSelfHosted } from './page/projects/debian/DebianSelfHosted';
+import { DebianVps } from './page/projects/debian/DebianVps';
 import { Contact } from './page/Contact';
 
 function App() {
@@ -33,7 +37,11 @@ function App() {
         <Center py={75} px={150}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="discord-bot" element={<DiscordBot />} />
+            <Route path="/js-discord-bot" element={<JsDiscordBot />} />
+            <Route path="/js-scripts" element={<JsScript />} />
+            <Route path="/js-web3-app" element={<Web3App />} />
+            <Route path="/debian-self-hosted-server" element={<DebianSelfHosted />} />
+            <Route path="/debian-vps" element={<DebianVps />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Center>

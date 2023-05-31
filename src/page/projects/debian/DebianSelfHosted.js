@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 
-export const DiscordBot = () => {
+export const DebianSelfHosted = () => {
     return (
         <Box>
-            discord bot
+            Debian slef hosted
         </Box>
     )
 }

@@ -2,8 +2,8 @@ import { Button, Drawer,
     DrawerHeader, DrawerBody, 
     DrawerOverlay, DrawerContent, 
     DrawerCloseButton, Center, 
-    useDisclosure, useColorMode, 
-    useColorModeValue, Divider, Box, AbsoluteCenter } from '@chakra-ui/react'
+    useDisclosure, useColorModeValue, 
+    Divider, Box, AbsoluteCenter } from '@chakra-ui/react'
 import { useRef } from 'react';
 import { NavButton } from './NavButton';
 
@@ -27,13 +27,43 @@ export const ProjectsMenu = () => {
                     <DrawerBody>
                         <Center fontSize='20px' fontWeight='bold'>JavaScript</Center>
 
-                        <Box position='relative' padding='8' style={{ textAlign: 'center' }}>
+                        <Box position='relative' padding='8'>
                             <Divider mt="3px" />
                             <AbsoluteCenter>Node</AbsoluteCenter>
                         </Box>
 
-                        <Center mt='12px'>
-                            <NavButton variant="projectnavbutton" to="discord-bot">Discord Bot</NavButton>
+                        <Center>
+                            <NavButton variant="projectnavbutton" to="js-discord-bot">Discord Bot</NavButton>
+                        </Center>
+
+                        <Center>
+                            <NavButton variant="projectnavbutton" to="js-scripts">Scripts</NavButton>
+                        </Center>
+
+                        <Box position='relative' padding='8'>
+                            <Divider mt="3px" />
+                            <AbsoluteCenter>React</AbsoluteCenter>
+                        </Box>
+
+                        <Center>
+                            <NavButton variant="projectnavbutton" to="js-web3-app">Web3 App</NavButton>
+                        </Center>
+
+
+                        <Divider mt="16px" />
+                        <Center mt="18px" fontSize='20px' fontWeight='bold'>Linux Server</Center>
+
+                        <Box position='relative' padding='8'>
+                            <Divider mt="3px" />
+                            <AbsoluteCenter>Debian</AbsoluteCenter>
+                        </Box>
+
+                        <Center>
+                            <NavButton variant="projectnavbutton" to="debian-self-hosted-server">Self Hosted Server</NavButton>
+                        </Center>
+
+                        <Center>
+                            <NavButton variant="projectnavbutton" to="debian-vps">VPS</NavButton>
                         </Center>
 
                     </DrawerBody>

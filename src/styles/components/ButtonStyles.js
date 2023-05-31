@@ -23,7 +23,7 @@ export const ButtonStyles = {
             height: '45px',
             width: '200px',
             borderRadius: '6.25px',
-            position: 'absolute',
+            position: 'relative',
             _hover: {
                 bg: mode("rgba(0, 0, 0, 0.1)", "#212837")(props),
             }
