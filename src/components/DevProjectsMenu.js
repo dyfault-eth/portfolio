@@ -7,7 +7,7 @@ import { Button, Drawer,
 import { useRef } from 'react';
 import { NavButton } from './NavButton';
 
-export const ProjectsMenu = () => {
+export const DevProjectsMenu = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
@@ -15,7 +15,7 @@ export const ProjectsMenu = () => {
 
     return (
         <>
-            <Button variant='navbutton' ref={btnRef} onClick={onOpen}>Projects</Button>
+            <Button variant='navbutton' ref={btnRef} onClick={onOpen}>Dev Projects</Button>
             <Drawer isOpen={isOpen} placement='left' onClose={onClose} finalFocusRef={btnRef}>
                 <DrawerOverlay/>
 
@@ -25,11 +25,16 @@ export const ProjectsMenu = () => {
                     </DrawerHeader>
                     
                     <DrawerBody>
-                        <Center fontSize='20px' fontWeight='bold'>JavaScript</Center>
+                        <Center fontSize='20px' fontWeight='bold'>Development Projects</Center>
+
+                        <Box mt="24px" position="relative">
+                            <Divider />
+                            <AbsoluteCenter mt="-3px" fontSize="18px" fontWeight="bold">Javascript</AbsoluteCenter>
+                        </Box>
 
                         <Box position='relative' padding='8'>
                             <Divider mt="3px" />
-                            <AbsoluteCenter>Node</AbsoluteCenter>
+                            <AbsoluteCenter fontSize="16px" fontWeight="bold">Node</AbsoluteCenter>
                         </Box>
 
                         <Center>
@@ -50,20 +55,13 @@ export const ProjectsMenu = () => {
                         </Center>
 
 
-                        <Divider mt="16px" />
-                        <Center mt="18px" fontSize='20px' fontWeight='bold'>Linux Server</Center>
-
-                        <Box position='relative' padding='8'>
-                            <Divider mt="3px" />
-                            <AbsoluteCenter>Debian</AbsoluteCenter>
+                        <Box mt="36px" position="relative">
+                            <Divider />
+                            <AbsoluteCenter mt="-3px" fontSize="18px" fontWeight="bold">Python</AbsoluteCenter>
                         </Box>
 
-                        <Center>
-                            <NavButton variant="projectnavbutton" to="debian-self-hosted-server">Self Hosted Server</NavButton>
-                        </Center>
-
-                        <Center>
-                            <NavButton variant="projectnavbutton" to="debian-vps">VPS</NavButton>
+                        <Center mt="32px">
+                            <NavButton variant="projectnavbutton" to="debian-self-hosted-server">Scripts</NavButton>
                         </Center>
 
                     </DrawerBody>

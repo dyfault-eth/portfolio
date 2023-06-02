@@ -3,7 +3,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, Flex, Text, Center, useColorMode } from '@chakra-ui/react';
 import { NavButton } from './components/NavButton';
-import { ProjectsMenu } from './components/ProjectsMenu';
+import { DevProjectsMenu } from './components/DevProjectsMenu';
+import { SrvProjectsMenu } from './components/SrvProjectsMenu';
 import { ToggleColorMode } from './components/ToggleColorMode';
 import { Home } from './page/Home';
 import { JsDiscordBot } from './page/projects/js/JsDiscordBot';
@@ -27,7 +28,8 @@ function App() {
       <Flex>
           <Flex bg={colorMode === "dark" ? "#13181f" : "gray.100"} direction="column" py={16} px={4} overflowY="auto" spacing="0" position={'fixed'} minH={'full'} zIndex='1'>
             <NavButton variant="navbutton" to="/">Home</NavButton>
-            <ProjectsMenu />
+            <DevProjectsMenu />
+            <SrvProjectsMenu />
             <NavButton variant="navbutton" to="/contact">Contact</NavButton>
             <Box mt='auto'>
               <ToggleColorMode variant='themebutton'/>
