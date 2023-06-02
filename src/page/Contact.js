@@ -2,7 +2,7 @@ import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button,
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import emailjs from "@emailjs/browser"
+const { SMTPClient } = require('emailjs-smtp-client');
 
 
 export const Contact = () => {
@@ -21,16 +21,27 @@ export const Contact = () => {
 
     const onSubmit = async (data) => {
       if (isHcaptchaVerified && isEmailError === false && isSubjectError === false) {
-        emailjs.send(
-          process.env.REACT_APP_MAIL_ID,
-          process.env.REACT_APP_TEMP_ID,
-          {
-            subject: data.subject,
-            email: data.email,
-            message: data.message,
-          },
-          process.env.REACT_APP_API_KEY
-        );
+        
+        const client = new SMTPClient({
+          host: 'smtp.gmail.com',
+          port: 465, 
+          user: process.env.REACT_APP_MAILUSER,
+          password: process.env.REACT_APP_PASSWORD,
+        });
+
+        const message = {
+          from: process.env.REACT_APP_MAILUSER,
+          to: process.env.REACT_APP_RECEIVER,
+          subject: data.subject,
+          text: data.message,
+        };
+
+        client.send(message).then(() => {
+          console.log('Email sent successfully');
+        }).catch((err) => {
+          console.error('Failed to send email:', err);
+        });
+        
         setIsSuccessSubmit(true);
         setEmail("");
         setSubject("");
