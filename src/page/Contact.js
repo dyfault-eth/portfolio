@@ -2,7 +2,7 @@ import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button,
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-const { SMTPClient } = require('emailjs-smtp-client');
+import { SMTPClient } from 'emailjs-smtp-client'
 
 
 export const Contact = () => {
