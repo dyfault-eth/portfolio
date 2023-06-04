@@ -39,6 +39,15 @@ export const ButtonStyles = {
             }
         }),
 
+        urlbutton: (props) => ({
+            textDecoration: 'underline',
+            fontWeight: 'None',
+            marginRight: '',
+            _hover: {
+                color: mode("#00C9FF", "#262E83")(props),
+            }
+        }),
+
         defaultStyle: {},
     }
 }

@@ -2,10 +2,10 @@ import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box, Flex, Text, Center, useColorMode } from '@chakra-ui/react';
-import { NavButton } from './components/NavButton';
-import { DevProjectsMenu } from './components/DevProjectsMenu';
-import { SrvProjectsMenu } from './components/SrvProjectsMenu';
-import { ToggleColorMode } from './components/ToggleColorMode';
+import { NavButton } from './components/menu/NavButton';
+import { DevProjectsMenu } from './components/menu/DevProjectsMenu';
+import { SrvProjectsMenu } from './components/menu/SrvProjectsMenu';
+import { ToggleColorMode } from './components/menu/ToggleColorMode';
 import { Home } from './page/Home';
 import { JsDiscordBot } from './page/projects/js/JsDiscordBot';
 import { JsScript } from './page/projects/js/JsScript';
@@ -36,7 +36,7 @@ function App() {
             </Box>
       </Flex>
 
-        <Center py={75} px={150}>
+        <Center py={75} width='100%'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/js-discord-bot" element={<JsDiscordBot />} />
