@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useToast } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useToast, Center } from "@chakra-ui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -82,31 +82,33 @@ export const Contact = () => {
     };
   
     return (
-      <Box>
-        <FormControl as="form" w="300px" isInvalid={ isEmailError || errors.email || isSubjectError} isRequired onSubmit={handleSubmit(onSubmit)}>
+      <Center>
+        <FormControl as="form" isInvalid={ isEmailError || errors.email || isSubjectError} isRequired onSubmit={handleSubmit(onSubmit)}>
           <FormLabel>Email</FormLabel>
-          <Input {...register("email", { required: true })} type="email" value={email} onChange={handleEmailChange} placeholder="Your email" />
+          <Input {...register("email", { required: true })} type="email" value={email} w="450px" onChange={handleEmailChange} placeholder="Your email" />
           {isEmailError ? (
           <FormErrorMessage>Email is required and should be in the correct format</FormErrorMessage>
         ) : ""}
   
           <FormLabel>Subject</FormLabel>
-          <Input {...register("subject", { required: true })} placeholder="Subject" value={subject} onChange={handleSubjectChange} />
+          <Input {...register("subject", { required: true })} placeholder="Subject" value={subject} w="450px" onChange={handleSubjectChange} />
           {isSubjectError && (
             <FormErrorMessage>Subject is required</FormErrorMessage>
           )}
   
           <FormLabel>Message</FormLabel>
           <Textarea {...register("message", { required: true })} h="150px" w="450px" size="lg" placeholder="Message" resize="both" />
-          <Box mt="10px">
+          <Center mt="10px">
             <HCaptcha
             sitekey={process.env.REACT_APP_SITE_KEY}
             onVerify={handleHcaptchaVerify}
             />
-        </Box>
+          </Center>
 
-          <Button mt="8px" type="submit">Submit</Button>
+          <Center>
+            <Button mt="8px" type="submit">Submit</Button>
+          </Center>
         </FormControl>
-      </Box>
+      </Center>
     );
   };

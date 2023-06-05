@@ -1,4 +1,4 @@
-import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton } from "@chakra-ui/react";
+import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex } from "@chakra-ui/react";
 import { TabsFunction } from "../../../components/page-content/TabsFunction";
 import { BitcoinBotWeeklyChart, BitcoinBotMonthlyChart, FearAndGreedDaily, FearAndGreedWeekly } from "../../../components/page-content/codepart/CodePartOfBot";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -28,7 +28,7 @@ export const JsDiscordBot = () => {
 
         <Box mt='12px'>
             <Text textAlign="center">Project presentation :</Text>
-            <br />
+            <br/>
             <Text textAlign="left">
                 This Discord bot sends a daily graph of Bitcoin's price over the past 7 days to a preconfigured channel by making an API request to fetch the price data. 
                 On the 30th day of every month, it sends a graph illustrating Bitcoin's price evolution throughout the month. Each night at 1:05 AM, it delivers 
@@ -36,7 +36,7 @@ export const JsDiscordBot = () => {
             </Text>
 
             <Text mt='24px'> Example of weekly chart made every day :</Text>
-            <Image mt='16px' w='600px' src='./images/chart_30-4-2023_10-30-0.png' />
+            <Image mt='16px' w='600px' src='./images/bitcoin-bot/chart_30-4-2023_10-30-0.png' />
 
             <Box position='relative'>
                 <Text mt="16px">Code example of the chart : </Text> 
@@ -48,7 +48,7 @@ export const JsDiscordBot = () => {
 
 
             <Text mt='24px'>Example of monthly chart :</Text>
-            <Image mt='16px' w='600px' src='./images/chart_30-5-2023_11-0-0.png' />
+            <Image mt='16px' w='600px' src='./images/bitcoin-bot/chart_30-5-2023_11-0-0.png' />
 
             <Box position='relative'>
                 <Text mt="16px">Code example of the chart : </Text>
@@ -59,7 +59,7 @@ export const JsDiscordBot = () => {
             </Box>
 
             <Text mt='24px'>Example of Fear and Greed Index every days :</Text>
-            <Image mt='16px' w='500px' src='./images/fear-and-greed-discord-bot.png' />
+            <Image mt='16px' w='500px' src='./images/bitcoin-bot/fear-and-greed-discord-bot.png' />
 
             <Box position='relative'>
             <Text mt="16px">Code example of the Fear and Greed Index daily : </Text>
@@ -70,7 +70,7 @@ export const JsDiscordBot = () => {
             </Box>
 
             <Text mt='24px'>Example of Fear and Greed Index every week :</Text>
-            <Image mt='16px' w='600px' src='./images/chart_28-5-2023_1-10-0.png' />
+            <Image mt='16px' w='600px' src='./images/bitcoin-bot/chart_28-5-2023_1-10-0.png' />
 
             <Box position='relative'>
                 <Text mt="16px">Code example of the Fear and Greed Index weekly : </Text>
@@ -85,10 +85,92 @@ export const JsDiscordBot = () => {
     </Box>
     
     // web3 discord bot content
-    const web3BotContent = <Box>Web3</Box>
+    const web3BotContent = 
+    <Box w='1250px'>
+        <Box mt='12px'>
+            <Text textAlign="center">Project presentation :</Text>
+            <br/>
+            <Text textAlign='left'>
+                This Discord bot is a project that interacts with the blockchain using the web3.js library. It has multiple commands. 
+                The first one is /flag, which takes an argument representing your crypto wallet on the Polygon blockchain. 
+                It retrieves your balance of the FLAG cryptocurrency from the For Loot And Glory project, 
+                as well as your staking royalty balance with the number of days remaining until your funds are unlocked and your pending FLAG rewards. 
+                And provides information about your LP (Liquidity Provider) tokens (FLAG/MATIC or FLAG/ETH), including details about each token within your LP tokens. 
+                It also shows any pending rewards. Additionally, there is the Vault command, which is similar to LP Mining but includes compound interest. 
+                The /flag command saves your wallet address, total FLAG balance, and $ balance to a JSON file. <br/><br/>
+                Another command is /graph, which requires your wallet address and the type of graph (bar or line). 
+                This command filters the JSON files using your wallet address, retrieves the saved data, and creates a graph showing your $ total on the Flag dApp over time, 
+                as well as the number of FLAG tokens. <br/><br/>
+                There is another command related to the FLAG project, which is /flagrewards. It allows you to retrieve the total number of FLAG tokens you have claimed since the beginning of the project.
+                <br/><br/> Lastly, there is the /matic command, which retrieves the Matic tokens you own on the Polygon blockchain in different forms, such as Matic, WMatic, StMatic, and AaveMatic.
+            
+                <br/><br/>
+                PS : Every command send you the result in dm
+            </Text>
+
+            <Box mt='16px'>
+                <Flex justify='center' alignItems='center'>
+                    <Kbd>/flag</Kbd> <Text ml='4px'>command on server : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-flag-command.png' mt='8px' />
+                <Image src='./images/web3-bot/web3-flag-command-result-on-server.png' mt='8px' />
+
+                <Flex justify='center' alignItems='center' mt='24px'>
+                    <Kbd>/flag</Kbd> <Text ml='4px'>command in dm : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-flag-command-result-dm.png' w='750px' mt='8px' />
+            </Box>
+
+            <Divider w='950px' mt='16px' />
+            
+            <Box mt='16px'>
+                <Flex justify='center' alignItems='center'>
+                    <Kbd>/graph</Kbd> <Text ml='4px'>command on server : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-graph-command.png' mt='8px'/>
+                <Image src='./images/web3-bot/web3-graph-command-result-on-server.png' mt='8px'/>
+
+                <Flex justify='center' alignItems='center' mt='24px'>
+                    <Kbd>/graph</Kbd> <Text ml='4px'>command in dm : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-graph-command-result-dm.png' w='750px' mt='8px'/>
+            </Box>
+
+            <Divider w='950px' mt='16px' />
+
+            <Box mt='16px'>
+                <Flex justify='center' alignItems='center'>
+                    <Kbd>/flagrewards</Kbd> <Text ml='4px'>command on server : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-flagrewards-command.png' mt='8px'/>
+                <Image src='./images/web3-bot/web3-flagrewards-command-result-on-server.png' mt='8px'/>
+
+                <Flex justify='center' alignItems='center' mt='24px'>
+                    <Kbd>/flagrewards</Kbd> <Text ml='4px'>command in dm : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-flagrewards-command-result-dm.png' mt='8px'/>
+            </Box>
+
+            <Divider w='950px' mt='16px' />
+
+            <Box mt='16px'>
+                <Flex justify='center' alignItems='center'>
+                    <Kbd>/matic</Kbd> <Text ml='4px'>command on server : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-matic-command.png' mt='8px'/>
+                <Image src='./images/web3-bot/web3-matic-command-result-on-server.png' mt='8px'/>
+
+                <Flex justify='center' alignItems='center' mt='24px'>
+                    <Kbd>/matic</Kbd> <Text ml='4px'>command in dm : </Text>
+                </Flex>
+                <Image src='./images/web3-bot/web3-matic-command-result-dm.png' mt='8px'/>
+            </Box>
+        </Box>
+        
+    </Box>
 
     // stables discord bot
-    const stablesBotContent = <Box>Stables</Box>
+    const stablesBotContent = <Box w='1250px'>Stables</Box>
 
     const tabs = [
         { label: "Bitcoin Bot", content: bitcoinBotContent },
