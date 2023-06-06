@@ -1,5 +1,7 @@
 import { Box } from '@chakra-ui/react'
 
 export const PyScripts = () => {
-    <Box>Python Scripts</Box>
+    return(
+        <Box>Python Scripts</Box>
+    )
 }
