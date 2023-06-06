@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useToast, Center } from "@chakra-ui/react";
+import { FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useToast, Center, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -8,7 +8,6 @@ import emailjs from "@emailjs/browser"
 export const Contact = () => {
 
     const [isHcaptchaVerified, setIsHcaptchaVerified] = useState(false);
-    const [isSuccessSubmit, setIsSuccessSubmit] = useState(false);
     const { register, handleSubmit, reset, formState: {errors} } = useForm({
       defaultValues: {
         email: "",
@@ -32,8 +31,6 @@ export const Contact = () => {
           },
           process.env.REACT_APP_API_KEY
         )
-        
-        setIsSuccessSubmit(true);
         setEmail("");
         setSubject("");
         reset();
@@ -82,7 +79,7 @@ export const Contact = () => {
     };
   
     return (
-      <Center>
+      <Stack>
         <FormControl as="form" isInvalid={ isEmailError || errors.email || isSubjectError} isRequired onSubmit={handleSubmit(onSubmit)}>
           <FormLabel>Email</FormLabel>
           <Input {...register("email", { required: true })} type="email" value={email} w="450px" onChange={handleEmailChange} placeholder="Your email" />
@@ -109,6 +106,6 @@ export const Contact = () => {
             <Button mt="8px" type="submit">Submit</Button>
           </Center>
         </FormControl>
-      </Center>
+      </Stack>
     );
   };

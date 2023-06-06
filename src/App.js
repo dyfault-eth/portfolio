@@ -13,10 +13,11 @@ import { Web3App } from './page/projects/js/Web3App';
 import { DebianSelfHosted } from './page/projects/debian/DebianSelfHosted';
 import { DebianVps } from './page/projects/debian/DebianVps';
 import { Contact } from './page/Contact';
+import { NotFound } from './page/NotFound';
 
 function App() {
 
-  const {colorMode, toggleColorMode} = useColorMode()
+  const {colorMode} = useColorMode()
 
   return (
     <Box>
@@ -45,6 +46,7 @@ function App() {
             <Route path="/debian-self-hosted-server" element={<DebianSelfHosted />} />
             <Route path="/debian-vps" element={<DebianVps />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path='/*' element={<NotFound />} />
           </Routes>
         </Center>
 

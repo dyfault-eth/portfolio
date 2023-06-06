@@ -1,6 +1,6 @@
-import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex } from "@chakra-ui/react";
+import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex, Stack } from "@chakra-ui/react";
 import { TabsFunction } from "../../../components/page-content/TabsFunction";
-import { BitcoinBotWeeklyChart, BitcoinBotMonthlyChart, FearAndGreedDaily, FearAndGreedWeekly } from "../../../components/page-content/codepart/CodePartOfBot";
+import { BitcoinBotWeeklyChart, BitcoinBotMonthlyChart, FearAndGreedDaily, FearAndGreedWeekly, stablesBot } from "../../../components/page-content/codepart/CodePartOfBot";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { MdContentCopy } from "react-icons/md";
@@ -36,7 +36,7 @@ export const JsDiscordBot = () => {
             </Text>
 
             <Text mt='24px'> Example of weekly chart made every day :</Text>
-            <Image mt='16px' w='600px' src='./images/bitcoin-bot/chart_30-4-2023_10-30-0.png' />
+            <Image mt='16px' w='600px' src='./images/bitcoin-discord-bot/chart_30-4-2023_10-30-0.png' />
 
             <Box position='relative'>
                 <Text mt="16px">Code example of the chart : </Text> 
@@ -48,7 +48,7 @@ export const JsDiscordBot = () => {
 
 
             <Text mt='24px'>Example of monthly chart :</Text>
-            <Image mt='16px' w='600px' src='./images/bitcoin-bot/chart_30-5-2023_11-0-0.png' />
+            <Image mt='16px' w='600px' src='./images/bitcoin-discord-bot/chart_30-5-2023_11-0-0.png' />
 
             <Box position='relative'>
                 <Text mt="16px">Code example of the chart : </Text>
@@ -59,7 +59,7 @@ export const JsDiscordBot = () => {
             </Box>
 
             <Text mt='24px'>Example of Fear and Greed Index every days :</Text>
-            <Image mt='16px' w='500px' src='./images/bitcoin-bot/fear-and-greed-discord-bot.png' />
+            <Image mt='16px' w='500px' src='./images/bitcoin-discord-bot/fear-and-greed-discord-bot.png' />
 
             <Box position='relative'>
             <Text mt="16px">Code example of the Fear and Greed Index daily : </Text>
@@ -70,7 +70,7 @@ export const JsDiscordBot = () => {
             </Box>
 
             <Text mt='24px'>Example of Fear and Greed Index every week :</Text>
-            <Image mt='16px' w='600px' src='./images/bitcoin-bot/chart_28-5-2023_1-10-0.png' />
+            <Image mt='16px' w='600px' src='./images/bitcoin-discord-bot/chart_28-5-2023_1-10-0.png' />
 
             <Box position='relative'>
                 <Text mt="16px">Code example of the Fear and Greed Index weekly : </Text>
@@ -112,13 +112,13 @@ export const JsDiscordBot = () => {
                 <Flex justify='center' alignItems='center'>
                     <Kbd>/flag</Kbd> <Text ml='4px'>command on server : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-flag-command.png' mt='8px' />
-                <Image src='./images/web3-bot/web3-flag-command-result-on-server.png' mt='8px' />
+                <Image src='./images/web3-discord-bot/web3-flag-command.png' mt='8px' />
+                <Image src='./images/web3-discord-bot/web3-flag-command-result-on-server.png' mt='8px' />
 
                 <Flex justify='center' alignItems='center' mt='24px'>
                     <Kbd>/flag</Kbd> <Text ml='4px'>command in dm : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-flag-command-result-dm.png' w='750px' mt='8px' />
+                <Image src='./images/web3-discord-bot/web3-flag-command-result-dm.png' w='750px' mt='8px' />
             </Box>
 
             <Divider w='950px' mt='16px' />
@@ -127,13 +127,13 @@ export const JsDiscordBot = () => {
                 <Flex justify='center' alignItems='center'>
                     <Kbd>/graph</Kbd> <Text ml='4px'>command on server : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-graph-command.png' mt='8px'/>
-                <Image src='./images/web3-bot/web3-graph-command-result-on-server.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-graph-command.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-graph-command-result-on-server.png' mt='8px'/>
 
                 <Flex justify='center' alignItems='center' mt='24px'>
                     <Kbd>/graph</Kbd> <Text ml='4px'>command in dm : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-graph-command-result-dm.png' w='750px' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-graph-command-result-dm.png' w='750px' mt='8px'/>
             </Box>
 
             <Divider w='950px' mt='16px' />
@@ -142,13 +142,13 @@ export const JsDiscordBot = () => {
                 <Flex justify='center' alignItems='center'>
                     <Kbd>/flagrewards</Kbd> <Text ml='4px'>command on server : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-flagrewards-command.png' mt='8px'/>
-                <Image src='./images/web3-bot/web3-flagrewards-command-result-on-server.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-flagrewards-command.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-flagrewards-command-result-on-server.png' mt='8px'/>
 
                 <Flex justify='center' alignItems='center' mt='24px'>
                     <Kbd>/flagrewards</Kbd> <Text ml='4px'>command in dm : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-flagrewards-command-result-dm.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-flagrewards-command-result-dm.png' mt='8px'/>
             </Box>
 
             <Divider w='950px' mt='16px' />
@@ -157,20 +157,57 @@ export const JsDiscordBot = () => {
                 <Flex justify='center' alignItems='center'>
                     <Kbd>/matic</Kbd> <Text ml='4px'>command on server : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-matic-command.png' mt='8px'/>
-                <Image src='./images/web3-bot/web3-matic-command-result-on-server.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-matic-command.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-matic-command-result-on-server.png' mt='8px'/>
 
                 <Flex justify='center' alignItems='center' mt='24px'>
                     <Kbd>/matic</Kbd> <Text ml='4px'>command in dm : </Text>
                 </Flex>
-                <Image src='./images/web3-bot/web3-matic-command-result-dm.png' mt='8px'/>
+                <Image src='./images/web3-discord-bot/web3-matic-command-result-dm.png' mt='8px'/>
             </Box>
         </Box>
         
     </Box>
 
     // stables discord bot
-    const stablesBotContent = <Box w='1250px'>Stables</Box>
+    const stablesBotContent = 
+    <Box w='1250px'>
+        <Stack mt='12px'>
+
+            <Center mt='12px' display="flex" alignItems='center'>
+                You can check the project on{" "}
+                
+                <Button variant="urlbutton" marginLeft="-0.6rem" as="a" href="https://github.com/dyfault-eth/stables-discord-bot" target="_blank" rel="noreferrer">my github</Button>
+            </Center>
+
+            <Center>
+                <Divider w='450px' />
+            </Center>
+
+            <Text>Project presentation :</Text>
+            <br/>
+            <Text textAlign='left'>
+                This Discord bot is a project that retrieves the latest listing and sales information from an NFT collection called Stables on the Rarible website 
+                using API requests, and sends it to a predefined Discord channel. It provides information about the latest listings and sales of the Stables collection.
+            </Text>
+
+        </Stack>
+
+        <Stack mt='16px'>
+            <Text>Example : </Text>
+            <Center>
+                <Image w='550px' src='./images/stables-discord-bot/stables-bot-on-server.png'></Image>
+            </Center>
+
+            <Box position='relative'>
+            <Text mt="16px">Code example of the stables discord bot : </Text>
+                <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '13px'}}>
+                    {stablesBot}
+                </SyntaxHighlighter>
+                <IconButton onClick={() => handleCopyClick(stablesBot)} position="absolute" top="55px" right="8px" size="sm" icon={<MdContentCopy />} />
+            </Box>
+        </Stack>
+    </Box>
 
     const tabs = [
         { label: "Bitcoin Bot", content: bitcoinBotContent },

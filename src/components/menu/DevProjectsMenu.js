@@ -38,15 +38,15 @@ export const DevProjectsMenu = () => {
                         </Box>
 
                         <Center>
-                            <NavButton variant="projectnavbutton" to="js-discord-bot">Discord Bot</NavButton>
+                            <NavButton variant="projectnavbutton" to="/js-discord-bot">Discord Bot</NavButton>
                         </Center>
 
                         <Center>
-                            <NavButton variant="projectnavbutton" to="js-discord-bot">Web3 Bot</NavButton>
+                            <NavButton variant="projectnavbutton" to="/js-web3-bot">Web3 Bot</NavButton>
                         </Center>
 
                         <Center>
-                            <NavButton variant="projectnavbutton" to="js-scripts">Scripts</NavButton>
+                            <NavButton variant="projectnavbutton" to="/js-scripts">Scripts</NavButton>
                         </Center>
 
                         <Box position='relative' padding='8'>
@@ -55,7 +55,7 @@ export const DevProjectsMenu = () => {
                         </Box>
 
                         <Center>
-                            <NavButton variant="projectnavbutton" to="js-web3-app">Web3 App</NavButton>
+                            <NavButton variant="projectnavbutton" to="/js-web3-app">Web3 App</NavButton>
                         </Center>
 
 
@@ -65,7 +65,7 @@ export const DevProjectsMenu = () => {
                         </Box>
 
                         <Center mt="32px">
-                            <NavButton variant="projectnavbutton" to="debian-self-hosted-server">Scripts</NavButton>
+                            <NavButton variant="projectnavbutton" to="/py-scripts">Scripts</NavButton>
                         </Center>
 
                     </DrawerBody>

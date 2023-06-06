@@ -38,11 +38,11 @@ export const SrvProjectsMenu = () => {
                         </Box>
 
                         <Center>
-                            <NavButton variant="projectnavbutton" to="debian-vps">VPS</NavButton>
+                            <NavButton variant="projectnavbutton" to="/debian-vps">VPS</NavButton>
                         </Center>
 
                         <Center>
-                            <NavButton variant="projectnavbutton" to="debian-self-hosted-server">Self Hosted Server</NavButton>
+                            <NavButton variant="projectnavbutton" to="/debian-self-hosted-server">Self Hosted Server</NavButton>
                         </Center>
 
                     </DrawerBody>
