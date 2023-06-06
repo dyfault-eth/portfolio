@@ -9,6 +9,7 @@ import { ToggleColorMode } from './components/menu/ToggleColorMode';
 import { Home } from './page/Home';
 import { JsDiscordBot } from './page/projects/js/JsDiscordBot';
 import { JsScript } from './page/projects/js/JsScript';
+import { JsWeb3Bot } from './page/projects/js/JsWeb3Bot';
 import { Web3App } from './page/projects/js/Web3App';
 import { DebianSelfHosted } from './page/projects/debian/DebianSelfHosted';
 import { DebianVps } from './page/projects/debian/DebianVps';
@@ -41,6 +42,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/js-discord-bot" element={<JsDiscordBot />} />
+            <Route path="/js-web3-bot" element={<JsWeb3Bot />} />
             <Route path="/js-scripts" element={<JsScript />} />
             <Route path="/js-web3-app" element={<Web3App />} />
             <Route path="/debian-self-hosted-server" element={<DebianSelfHosted />} />
