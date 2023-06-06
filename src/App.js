@@ -11,6 +11,7 @@ import { JsDiscordBot } from './page/projects/js/JsDiscordBot';
 import { JsScript } from './page/projects/js/JsScript';
 import { JsWeb3Bot } from './page/projects/js/JsWeb3Bot';
 import { Web3App } from './page/projects/js/Web3App';
+import { PyScripts } from './page/projects/py/PyScripts';
 import { DebianSelfHosted } from './page/projects/debian/DebianSelfHosted';
 import { DebianVps } from './page/projects/debian/DebianVps';
 import { Contact } from './page/Contact';
@@ -45,6 +46,7 @@ function App() {
             <Route path="/js-web3-bot" element={<JsWeb3Bot />} />
             <Route path="/js-scripts" element={<JsScript />} />
             <Route path="/js-web3-app" element={<Web3App />} />
+            <Route path="/py-scripts" element={<PyScripts />} />
             <Route path="/debian-self-hosted-server" element={<DebianSelfHosted />} />
             <Route path="/debian-vps" element={<DebianVps />} />
             <Route path="/contact" element={<Contact />} />
