@@ -87,7 +87,7 @@ export const Web3App = () => {
                     <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                         {cryptoPriceJS}
                     </SyntaxHighlighter>
-                    <IconButton onClick={() => handleCopyClick(cryptoPriceJS)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                    <IconButton onClick={() => handleCopyClick(cryptoPriceJS)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />} />
                 </Box>
 
                 <Box position='relative'>
@@ -98,7 +98,7 @@ export const Web3App = () => {
                     <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                         {cryptoPriceFront}
                     </SyntaxHighlighter>
-                    <IconButton onClick={() => handleCopyClick(cryptoPriceFront)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                    <IconButton onClick={() => handleCopyClick(cryptoPriceFront)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />} />
                 </Box>
 
                 <Center>
@@ -125,7 +125,7 @@ export const Web3App = () => {
                     <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                         {btcHistJS}
                     </SyntaxHighlighter>
-                    <IconButton onClick={() => handleCopyClick(btcHistJS)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                    <IconButton onClick={() => handleCopyClick(btcHistJS)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />} />
                 </Box>
 
                 <Center>
@@ -151,7 +151,7 @@ export const Web3App = () => {
                     <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                         {fearHistJS}
                     </SyntaxHighlighter>
-                    <IconButton onClick={() => handleCopyClick(fearHistJS)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                    <IconButton onClick={() => handleCopyClick(fearHistJS)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />} />
                 </Box>
 
             </Stack>

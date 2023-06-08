@@ -209,9 +209,8 @@ export const JsDiscordBot = () => {
                 <Divider w='450px' />
             </Center>
 
-            <Text>Project presentation :</Text>
-            <br/>
-            <Text textAlign='left'>
+            <Text mt='24px'>Project presentation :</Text>
+            <Text textAlign='left' py={2}>
                 This Discord bot is a project that retrieves the latest listing and sales information from an NFT collection called Stables on the Rarible website 
                 using API requests, and sends it to a predefined Discord channel. It provides information about the latest listings and sales of the Stables collection.
             </Text>
