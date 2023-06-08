@@ -1,4 +1,4 @@
-import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex, Stack } from "@chakra-ui/react";
+import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex, Stack, useToast } from "@chakra-ui/react";
 import { TabsFunction } from "../../../components/page-content/TabsFunction";
 import { BitcoinBotWeeklyChart, BitcoinBotMonthlyChart, FearAndGreedDaily, FearAndGreedWeekly, stablesBot } from "../../../components/page-content/codepart/CodePartOfBot";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -8,9 +8,19 @@ import { MdContentCopy } from "react-icons/md";
 export const JsDiscordBot = () => {
 
     const { colorMode } = useColorMode();
+    const toast = useToast({
+        position: 'top',
+    });
 
     const handleCopyClick = (text) => {
         navigator.clipboard.writeText(text);
+        toast({
+            title: "Success",
+            description: "copied to clipboard",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          });
     };
     
     // bitcoin discord bot content
@@ -33,6 +43,7 @@ export const JsDiscordBot = () => {
                 This Discord bot sends a daily graph of Bitcoin's price over the past 7 days to a preconfigured channel by making an API request to fetch the price data. 
                 On the 30th day of every month, it sends a graph illustrating Bitcoin's price evolution throughout the month. Each night at 1:05 AM, it delivers 
                 the updated Fear and Greed Index value. Additionally, at the end of each week, it generates a bar chart summarizing the week's information.
+                I've created a second bot for the token FLAG similar to this one without Fear and Greed features.
             </Text>
 
             <Text mt='24px'> Example of weekly chart made every day :</Text>
@@ -210,14 +221,16 @@ export const JsDiscordBot = () => {
     </Box>
 
     const tabs = [
-        { label: "Bitcoin Bot", content: bitcoinBotContent },
-        { label: "Web3 Bot", content: web3BotContent },
-        { label: "Stables Bot", content: stablesBotContent}
+        { label: "Bitcoin Discord Bot", content: bitcoinBotContent },
+        { label: "Web3 Discord Bot", content: web3BotContent },
+        { label: "Stables Discord Bot", content: stablesBotContent}
     ];
 
     return (
         <Center>
+
             <TabsFunction tabs={tabs} />
+            
         </Center>
     );
 };
