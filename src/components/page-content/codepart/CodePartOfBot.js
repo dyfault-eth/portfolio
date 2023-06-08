@@ -1,5 +1,6 @@
 export const BitcoinBotWeeklyChart = `setInterval(async function() {
         
+    // get date
     let date = new Date();
     let hour = date.getHours();
     let minute = date.getMinutes();
@@ -8,12 +9,15 @@ export const BitcoinBotWeeklyChart = `setInterval(async function() {
     let month = date.getMonth();
     let year = date.getFullYear();
 
+    // setup now variable and update and check if now is equal to update
     let now = \`$\{day}/$\{month}/$\{year} $\{hour}:$\{minute}:$\{second}\`
     let update = \`$\{day}/$\{month}/$\{year} 10:30:0\`
 
     if (now == update) {
     
         console.log("starting create chart")
+
+        // get bitcoin prices for the last 7 days
         let bitcoin = await coingeckoclient.coins.fetchMarketChart('bitcoin', {
             vs_currency: 'usd',
             days: '7',
@@ -25,16 +29,19 @@ export const BitcoinBotWeeklyChart = `setInterval(async function() {
         let dateArr = [];
         let dateArrFormat = [];
 
+        // Separation of prices and dates
         for (let i = 0; i < 7; i++) {
             bitcoinTimearr.push(bitcoinPrices[i][0]);
             bitcoinPricesArr.push(bitcoinPrices[i][1]);
         }
 
+        // setup date format
         for (let i = 0; i < 7; i++) {
             dateArr[i] = new Date(bitcoinTimearr[i])
             dateArrFormat[i] = dateArr[i].getDate() + "/" + ( dateArr[i].getMonth() + 1 )+ "/" + (dateArr[i].getFullYear() % 100);
         }
 
+        // create chart
         const mychart = ChartJSImage().chart({
             'type': 'line',
             'data': {
@@ -84,13 +91,14 @@ export const BitcoinBotWeeklyChart = `setInterval(async function() {
             }
         }).backgroundColor('rgb(61, 61, 61)').width(500).height(300);
 
+        // save the chart with date 
         let fulldate = \`$\{day}-$\{month}-$\{year} $\{hour}-$\{minute}-$\{second}\`
-
         let path = \`./chart/chart_$\{fulldate}.png\`;
 
         mychart.toFile(path)
         await sleep(10000)
 
+        // create embed discord message
         let file = new AttachmentBuilder(\`./chart/chart_$\{fulldate}.png\`);
         let embed = {
             title: 'chart btc',
@@ -98,6 +106,8 @@ export const BitcoinBotWeeklyChart = `setInterval(async function() {
                 url: \`attachment://chart_$\{fulldate}.png\`
             }
         }
+
+        // send the embed message to the server
         bot.channels.cache.get(chanIDCHART).send({embed: [embed], files: [file]});
         console.log("image sent")
 

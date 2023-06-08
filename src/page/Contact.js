@@ -82,19 +82,19 @@ export const Contact = () => {
       <Stack>
         <FormControl as="form" isInvalid={ isEmailError || errors.email || isSubjectError} isRequired onSubmit={handleSubmit(onSubmit)}>
           <FormLabel>Email</FormLabel>
-          <Input {...register("email", { required: true })} type="email" value={email} w="450px" onChange={handleEmailChange} placeholder="Your email" />
+          <Input {...register("email", { required: true })} type="email" value={email} w={{base: '350px', lg: "450px"}} onChange={handleEmailChange} placeholder="Your email" />
           {isEmailError ? (
           <FormErrorMessage>Email is required and should be in the correct format</FormErrorMessage>
         ) : ""}
   
           <FormLabel>Subject</FormLabel>
-          <Input {...register("subject", { required: true })} placeholder="Subject" value={subject} w="450px" onChange={handleSubjectChange} />
+          <Input {...register("subject", { required: true })} placeholder="Subject" value={subject} w={{base: '350px', lg: "450px"}} onChange={handleSubjectChange} />
           {isSubjectError && (
             <FormErrorMessage>Subject is required</FormErrorMessage>
           )}
   
           <FormLabel>Message</FormLabel>
-          <Textarea {...register("message", { required: true })} h="150px" w="450px" size="lg" placeholder="Message" resize="both" />
+          <Textarea {...register("message", { required: true })} h="150px" w={{base: '350px', lg: "450px"}} size="lg" placeholder="Message" resize="both" />
           <Center mt="10px">
             <HCaptcha
             sitekey={process.env.REACT_APP_SITE_KEY}

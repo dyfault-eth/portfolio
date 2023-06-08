@@ -12,7 +12,6 @@ export const ButtonStyles = {
             borderRadius: '6.25px',
             fontSize: '16px',
             textAlign: "center",
-            marginLeft: '8px',
             marginTop: '6px',
             _hover: {
                 bg: mode("rgba(0, 0, 0, 0.1)", "#212837")(props),
@@ -29,11 +28,23 @@ export const ButtonStyles = {
             }
         }),
 
+        projectthemebutton: (props) => ({
+            height: '45px',
+            width: '200px',
+            borderRadius: '6.25px',
+            position: 'absolute',
+            bottom: '16px',
+            _hover: {
+                bg: mode("rgba(0, 0, 0, 0.1)", "#212837")(props),
+            }
+        }),
+
         themebutton: (props) => ({
             height: '45px',
             width: '100px',
             borderRadius: '6.25px',
             position: 'absolute',
+            bottom: '16px',
             _hover: {
                 bg: mode("rgba(0, 0, 0, 0.1)", "#212837")(props),
             }

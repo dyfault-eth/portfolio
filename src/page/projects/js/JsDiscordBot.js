@@ -15,7 +15,7 @@ export const JsDiscordBot = () => {
     
     // bitcoin discord bot content
     const bitcoinBotContent = 
-    <Box w='1250px'>
+    <Box w={['375px', null, '650px', '750px', '1000px', '1250px']}>
         <Center mt='12px' display="flex" alignItems='center'>
             You can check the project on{" "}
             
@@ -86,7 +86,7 @@ export const JsDiscordBot = () => {
     
     // web3 discord bot content
     const web3BotContent = 
-    <Box w='1250px'>
+    <Box w={['375px', null, '650px', '750px', '1000px', '1250px']}>
         <Box mt='12px'>
             <Text textAlign="center">Project presentation :</Text>
             <br/>
@@ -121,7 +121,7 @@ export const JsDiscordBot = () => {
                 <Image src='./images/web3-discord-bot/web3-flag-command-result-dm.png' w='750px' mt='8px' />
             </Box>
 
-            <Divider w='950px' mt='16px' />
+            <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='16px' />
             
             <Box mt='16px'>
                 <Flex justify='center' alignItems='center'>
@@ -136,7 +136,7 @@ export const JsDiscordBot = () => {
                 <Image src='./images/web3-discord-bot/web3-graph-command-result-dm.png' w='750px' mt='8px'/>
             </Box>
 
-            <Divider w='950px' mt='16px' />
+            <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='16px' />
 
             <Box mt='16px'>
                 <Flex justify='center' alignItems='center'>
@@ -151,7 +151,7 @@ export const JsDiscordBot = () => {
                 <Image src='./images/web3-discord-bot/web3-flagrewards-command-result-dm.png' mt='8px'/>
             </Box>
 
-            <Divider w='950px' mt='16px' />
+            <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='16px' />
 
             <Box mt='16px'>
                 <Flex justify='center' alignItems='center'>
@@ -171,7 +171,7 @@ export const JsDiscordBot = () => {
 
     // stables discord bot
     const stablesBotContent = 
-    <Box w='1250px'>
+    <Box w={['375px', null, '650px', '750px', '1000px', '1250px']}>
         <Stack mt='12px'>
 
             <Center mt='12px' display="flex" alignItems='center'>
