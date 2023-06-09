@@ -1,9 +1,12 @@
-import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex, Stack, useToast } from "@chakra-ui/react";
+import { Box, Center, Text, Button, useColorMode, Divider, Image, IconButton, Kbd, Flex, Stack, useToast, SimpleGrid } from "@chakra-ui/react";
 import { TabsFunction } from "../../../components/page-content/TabsFunction";
 import { BitcoinBotWeeklyChart, BitcoinBotMonthlyChart, FearAndGreedDaily, FearAndGreedWeekly, stablesBot } from "../../../components/page-content/codepart/CodePartOfBot";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { MdContentCopy } from "react-icons/md";
+import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
+import { ScrollToTopButton } from "../../../components/button/ScrollToTopButton";
+
 
 export const JsDiscordBot = () => {
 
@@ -47,10 +50,18 @@ export const JsDiscordBot = () => {
             </Text>
         </Stack>
 
+        <Center>
+            <SimpleGrid columns={{base: 1, lg: 3}} mt='24px' gap={2}>
+                <Button as={SkipNavLink} id='btcmonthly' href='btcmonthly' variant='skipnavbutton'>Skip to Monthly Chart</Button>
+                <Button as={SkipNavLink} id='feardaily' href='feardaily' variant='skipnavbutton'>Skip to Fear and Greed daily</Button>
+                <Button as={SkipNavLink} id='fearchart' href='fearchart' variant='skipnavbutton'>Skip to Fear and Greed chart</Button>
+            </SimpleGrid>
+        </Center>
+
         <Stack>
             <Text mt='24px'> Example of weekly chart made every day :</Text>
             <Center>
-                <Image mt='16px' w='600px' src='./images/bitcoin-discord-bot/chart_30-4-2023_10-30-0.png' />
+                <Image w='600px' src='./images/bitcoin-discord-bot/chart_30-4-2023_10-30-0.png' />
             </Center>
 
             <Box position='relative'>
@@ -58,14 +69,20 @@ export const JsDiscordBot = () => {
                 <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                     {BitcoinBotWeeklyChart}
                 </SyntaxHighlighter>
-                <IconButton onClick={() => handleCopyClick(BitcoinBotWeeklyChart)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                <IconButton onClick={() => handleCopyClick(BitcoinBotWeeklyChart)} position="absolute" top="55px" right="8px" size="sm" icon={<MdContentCopy />} />
             </Box>
         </Stack>
 
+        <SkipNavContent id='btcmonthly' />
+
+        <Center>
+            <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='32px' />
+        </Center>
+
         <Stack>
-            <Text mt='24px'>Example of monthly chart :</Text>
+            <Text mt='26px'>Example of monthly chart :</Text>
             <Center>
-                <Image mt='16px' w='600px' src='./images/bitcoin-discord-bot/chart_30-5-2023_11-0-0.png' />
+                <Image w='600px' src='./images/bitcoin-discord-bot/chart_30-5-2023_11-0-0.png' />
             </Center>
             
             <Box position='relative'>
@@ -73,14 +90,20 @@ export const JsDiscordBot = () => {
                 <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                     {BitcoinBotMonthlyChart}
                 </SyntaxHighlighter>
-                <IconButton onClick={() => handleCopyClick(BitcoinBotMonthlyChart)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                <IconButton onClick={() => handleCopyClick(BitcoinBotMonthlyChart)} position="absolute" top="55px" right="8px" size="sm" icon={<MdContentCopy />} />
             </Box>
         </Stack>
 
+        <SkipNavContent id='feardaily' />
+
+        <Center>
+            <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='32px' />
+        </Center>
+
         <Stack>
-            <Text mt='24px'>Example of Fear and Greed Index every days :</Text>
+            <Text mt='26px'>Example of Fear and Greed Index every days :</Text>
             <Center>
-                <Image mt='16px' w='500px' src='./images/bitcoin-discord-bot/fear-and-greed-discord-bot.png' />
+                <Image w='500px' src='./images/bitcoin-discord-bot/fear-and-greed-discord-bot.png' />
             </Center>
 
             <Box position='relative'>
@@ -88,14 +111,20 @@ export const JsDiscordBot = () => {
                 <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                     {FearAndGreedDaily}
                 </SyntaxHighlighter>
-                <IconButton onClick={() => handleCopyClick(FearAndGreedDaily)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                <IconButton onClick={() => handleCopyClick(FearAndGreedDaily)} position="absolute" top="55px" right="8px" size="sm" icon={<MdContentCopy />} />
             </Box>
         </Stack>
+
+        <SkipNavContent id='fearchart' />
+
+        <Center>
+            <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='32px' />
+        </Center>
 
         <Stack>
             <Text mt='24px'>Example of Fear and Greed Index every week :</Text>
             <Center>
-                <Image mt='16px' w='600px' src='./images/bitcoin-discord-bot/chart_28-5-2023_1-10-0.png' />
+                <Image w='600px' src='./images/bitcoin-discord-bot/chart_28-5-2023_1-10-0.png' />
             </Center>
 
             <Box position='relative'>
@@ -103,7 +132,7 @@ export const JsDiscordBot = () => {
                 <SyntaxHighlighter language="javascript" style={colorMode === 'dark' ? atomDark : solarizedlight} customStyle={{fontSize: '14px'}}>
                     {FearAndGreedWeekly}
                 </SyntaxHighlighter>
-                <IconButton onClick={() => handleCopyClick(FearAndGreedWeekly)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />} />
+                <IconButton onClick={() => handleCopyClick(FearAndGreedWeekly)} position="absolute" top="55px" right="8px" size="sm" icon={<MdContentCopy />} />
             </Box>
         </Stack>
 
@@ -134,7 +163,15 @@ export const JsDiscordBot = () => {
             </Text>
         </Stack>
 
-        <Box mt='16px'>
+        <Center>
+            <SimpleGrid columns={{base: 1, lg: 3}} mt='24px' gap={2}>
+                <Button as={SkipNavLink} id='graph-command' href='graph-command' variant='skipnavbutton'>Skip to /graph</Button>
+                <Button as={SkipNavLink} id='flagrewards-command' href='flagrewards-command' variant='skipnavbutton'>Skip to /flagrewards</Button>
+                <Button as={SkipNavLink} id='matic-command' href='matic-command' variant='skipnavbutton'>Skip to /matic</Button>
+            </SimpleGrid>
+        </Center>
+
+        <Box mt='32px'>
             <Flex justify='center' alignItems='center'>
                 <Kbd>/flag</Kbd> <Text ml='4px'>command on server : </Text>
             </Flex>
@@ -147,9 +184,11 @@ export const JsDiscordBot = () => {
             <Image src='./images/web3-discord-bot/web3-flag-command-result-dm.png' w='750px' mt='8px' />
         </Box>
 
-        <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' />
+        <SkipNavContent id='graph-command' />
 
-        <Box mt='24px'>
+        <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='32px' />
+
+        <Box mt='26px'>
             <Flex justify='center' alignItems='center'>
                 <Kbd>/graph</Kbd> <Text ml='4px'>command on server : </Text>
             </Flex>
@@ -162,9 +201,11 @@ export const JsDiscordBot = () => {
             <Image src='./images/web3-discord-bot/web3-graph-command-result-dm.png' w='750px' mt='8px'/>
         </Box>
 
-        <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' />
+        <SkipNavContent id='flagrewards-command' />
 
-        <Box mt='24px'>
+        <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='32px' />
+
+        <Box mt='26px'>
             <Flex justify='center' alignItems='center'>
                 <Kbd>/flagrewards</Kbd> <Text ml='4px'>command on server : </Text>
             </Flex>
@@ -177,9 +218,11 @@ export const JsDiscordBot = () => {
             <Image src='./images/web3-discord-bot/web3-flagrewards-command-result-dm.png' mt='8px'/>
         </Box>
 
-        <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' />
+        <SkipNavContent id='matic-command' />
 
-        <Box mt='24px'>
+        <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='32px' />
+
+        <Box mt='26px'>
             <Flex justify='center' alignItems='center'>
                 <Kbd>/matic</Kbd> <Text ml='4px'>command on server : </Text>
             </Flex>
@@ -243,6 +286,8 @@ export const JsDiscordBot = () => {
         <Center>
 
             <TabsFunction tabs={tabs} />
+
+            <ScrollToTopButton />
             
         </Center>
     );

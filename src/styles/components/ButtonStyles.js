@@ -61,7 +61,7 @@ export const ButtonStyles = {
 
         skipnavbutton: (props) => ({
             border: '1px solid', 
-            width: '225px',
+            width: '250px',
             height: '30px',
             textAlign: 'center', 
             borderRadius: '6.5px', 
