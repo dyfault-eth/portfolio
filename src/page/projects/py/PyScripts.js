@@ -1,4 +1,5 @@
 import { Box, Center, useColorMode, useToast, Stack, Button, Divider, Text, IconButton, useColorModeValue } from '@chakra-ui/react'
+import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav';
 import { ScrollToTopButton } from '../../../components/button/ScrollToTopButton'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -6,6 +7,7 @@ import { MdContentCopy } from "react-icons/md";
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import 'github-markdown-css/github-markdown.css';
+import {FaStepBackward} from 'react-icons/fa';
 
 export const PyScripts = () => {
 
@@ -144,12 +146,17 @@ export const PyScripts = () => {
             </Center>
         </Stack>
 
-        <Stack mt='16px'>
+        <Stack>
+            <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton'>Skip to code</Button>
+        </Stack>
 
+        <Stack mt='16px'>
             <Box className='markdown-body' bg={colorMode === 'dark' ? '#1a202c' : 'rgb(255, 255, 255)'} color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}>
                 <ReactMarkdown>{readmeContent}</ReactMarkdown>
             </Box>
         </Stack>
+
+        <SkipNavContent id='code' />
 
         <Divider mt='32px' />
 
