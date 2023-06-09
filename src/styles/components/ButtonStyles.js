@@ -59,6 +59,18 @@ export const ButtonStyles = {
             }
         }),
 
+        skipnavbutton: (props) => ({
+            border: '1px solid', 
+            width: '225px',
+            height: '30px',
+            textAlign: 'center', 
+            borderRadius: '6.5px', 
+            cursor: 'pointer',
+            _hover: {
+                bg: mode("rgba(0, 0, 0, 0.1)", "#212837")(props),
+            }
+        }),
+
         defaultStyle: {},
     }
 }

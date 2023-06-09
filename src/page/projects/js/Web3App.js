@@ -1,12 +1,17 @@
-import { Box, Center, Stack, Text, Divider, useColorMode, IconButton, useToast, Button } from "@chakra-ui/react";
+import { Box, Center, Stack, Text, Divider, useColorMode, IconButton, useToast, Button, SimpleGrid } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { MdContentCopy } from "react-icons/md";
 import { cryptoPriceBash, cryptoPriceJS, btcHistBash, btcHistJS, fearHistBash, fearHistJS, cryptoPriceFront } from "../../../components/page-content/codepart/CodePartOfWeb3App";
+import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
+import { mode } from "@chakra-ui/theme-tools";
 
 export const Web3App = () => {
 
     const { colorMode } = useColorMode();
+    const hoverStyle = {
+        backgroundColor: colorMode === 'dark' ? "#212837" : "rgba(0, 0, 0, 0.1)",
+    };
     const toast = useToast({
         position: 'top',
     });
@@ -68,6 +73,16 @@ export const Web3App = () => {
                     This approach allows me to work around the API limitations and ensure consistent access to the cryptocurrency data for the homepage.
                 </Text>
 
+                <Center>
+                    <SimpleGrid columns={{base: 1, lg: 2}} mt='24px' gap={2}>
+                        <Button as={SkipNavLink} id='btchist' href='btchist' variant='skipnavbutton'>Skip to Fear History code</Button>
+
+                        <Button as={SkipNavLink} id='fearhist' href='fearhist' variant='skipnavbutton'>Skip to Fear History code</Button>
+                    </SimpleGrid>
+                </Center>
+                
+                
+
                 <Box position='relative'>
                     <Center mt='24px'>
                         Example of crypto-prices Bash script :
@@ -101,11 +116,12 @@ export const Web3App = () => {
                     <IconButton onClick={() => handleCopyClick(cryptoPriceFront)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />} />
                 </Box>
 
+                <SkipNavContent id='btchist' />
+
                 <Center>
                     <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' />
                 </Center>
                 
-
                 <Box position='relative'>
                     <Center mt='24px'>
                         Example of Bitcoin history Bash script :
@@ -127,6 +143,8 @@ export const Web3App = () => {
                     </SyntaxHighlighter>
                     <IconButton onClick={() => handleCopyClick(btcHistJS)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />} />
                 </Box>
+
+                <SkipNavContent id='fearhist' />
 
                 <Center>
                     <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' />
