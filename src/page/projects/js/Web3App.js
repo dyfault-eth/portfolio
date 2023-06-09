@@ -9,9 +9,6 @@ import { ScrollToTopButton } from "../../../components/button/ScrollToTopButton"
 export const Web3App = () => {
 
     const { colorMode } = useColorMode();
-    const hoverStyle = {
-        backgroundColor: colorMode === 'dark' ? "#212837" : "rgba(0, 0, 0, 0.1)",
-    };
     const toast = useToast({
         position: 'top',
     });
