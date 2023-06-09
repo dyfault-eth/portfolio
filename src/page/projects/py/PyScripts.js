@@ -1,4 +1,4 @@
-import { Box, Center, useColorMode, useToast, Stack, Button, Divider, Text, IconButton, useColorModeValue } from '@chakra-ui/react'
+import { Box, Center, useColorMode, useToast, Stack, Button, Divider, Text, IconButton, SimpleGrid } from '@chakra-ui/react'
 import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav';
 import { ScrollToTopButton } from '../../../components/button/ScrollToTopButton'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -13,7 +13,6 @@ export const PyScripts = () => {
 
     const [readmeContent, setReadmeContent] = useState('');
     const { colorMode } = useColorMode();
-    const markdownColor = useColorModeValue('github-markdown-light', 'github-markdown-dark');
     const toast = useToast({
         position: 'top',
     });
@@ -146,9 +145,12 @@ export const PyScripts = () => {
             </Center>
         </Stack>
 
-        <Stack>
-            <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton'>Skip to code</Button>
-        </Stack>
+        <Center>
+            <SimpleGrid mt='24px'>
+                <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton' _focus={{ outline: 'none' }} _active={{ outline: 'none' }} _hover={{ transform: 'none' }}>Skip to code</Button>
+            </SimpleGrid>
+        </Center>
+        
 
         <Stack mt='16px'>
             <Box className='markdown-body' bg={colorMode === 'dark' ? '#1a202c' : 'rgb(255, 255, 255)'} color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}>
