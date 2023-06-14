@@ -271,7 +271,7 @@ export const JsDiscordBot = () => {
         </Stack>
 
         <Center>
-            <SimpleGrid columns={2} mt='24px' gap={2}>
+            <SimpleGrid columns={{base: 1, lg: 2}} mt='24px' gap={2}>
                 <Button as={SkipNavLink} id='result-example' href='result-example' variant='skipnavbutton'>Skip to result on server</Button>
                 <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton'>Skip to code</Button>
             </SimpleGrid>

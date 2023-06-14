@@ -66,23 +66,23 @@ screen -dmS web3-bot ./start.sh`
                 <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' / >
             </Center>
 
-            <Stack mt='16px'>
+            <Box mt='16px' position='relative'>
                 <Text textAlign='center'>Start bash script example :</Text>
 
                 <SyntaxHighlighter language="bash" style={ colorMode === 'dark' ? atomDark : solarizedlight } customStyle={{ fontSize: '14px'}}>
                     {startBash}
                 </SyntaxHighlighter>
-                <IconButton onClick = {() => handleCopyClick(startBash)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />}/> 
-            </Stack>
+                <IconButton onClick = {() => handleCopyClick(startBash)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />}/> 
+            </Box>
 
-            <Stack mt='16px'>
+            <Box mt='16px' position='relative'>
                 <Text textAlign='center'>Start with screen command script example :</Text>
 
                 <SyntaxHighlighter language="bash" style={ colorMode === 'dark' ? atomDark : solarizedlight } customStyle={{ fontSize: '14px'}}>
                     {startScreenBash}
                 </SyntaxHighlighter>
-                <IconButton onClick = {() => handleCopyClick(startScreenBash)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />}/> 
-            </Stack>
+                <IconButton onClick = {() => handleCopyClick(startScreenBash)} position="absolute" top="40px" right="8px" size="sm" icon={<MdContentCopy />}/> 
+            </Box>
         </Box>
 
     return (
