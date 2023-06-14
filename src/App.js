@@ -72,7 +72,6 @@ useEffect(() => {
                   <Route path="/" element={<Home />} />
                   <Route path="/js-discord-bot" element={<JsDiscordBot />} />
                   <Route path="/js-web3-bot" element={<JsWeb3Bot />} />
-                  <Route path="/js-scripts" element={<JsScript />} />
                   <Route path="/js-web3-app" element={<Web3App />} />
                   <Route path="/py-scripts" element={<PyScripts />} />
                   <Route path="/py-discord-bot" element={<PyDiscordBot />} />

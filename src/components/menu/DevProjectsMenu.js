@@ -45,10 +45,6 @@ export const DevProjectsMenu = () => {
                             <NavButton variant="projectnavbutton" to="/js-web3-bot">Web3 Bot</NavButton>
                         </Center>
 
-                        <Center>
-                            <NavButton variant="projectnavbutton" to="/js-scripts">Scripts</NavButton>
-                        </Center>
-
                         <Box position='relative' padding='8'>
                             <Divider mt="3px" />
                             <AbsoluteCenter fontSize="16px" fontWeight="bold">React</AbsoluteCenter>
