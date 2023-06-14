@@ -7,7 +7,6 @@ import { MdContentCopy } from "react-icons/md";
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import 'github-markdown-css/github-markdown.css';
-import {FaStepBackward} from 'react-icons/fa';
 
 export const PyScripts = () => {
 
@@ -147,7 +146,7 @@ export const PyScripts = () => {
 
         <Center>
             <SimpleGrid mt='24px'>
-                <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton' _focus={{ outline: 'none' }} _active={{ outline: 'none' }} _hover={{ transform: 'none' }}>Skip to code</Button>
+                <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton'>Skip to code</Button>
             </SimpleGrid>
         </Center>
         

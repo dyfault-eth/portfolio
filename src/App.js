@@ -17,6 +17,7 @@ import { DebianVps } from './page/projects/debian/DebianVps';
 import { Contact } from './page/Contact';
 import { NotFound } from './page/NotFound';
 import { MenuPhone } from './components/menu/MenuPhone';
+import { PyDiscordBot } from './page/projects/py/PyDiscordBot';
 
 function App() {
 
@@ -56,7 +57,7 @@ useEffect(() => {
                   position={'fixed'} 
                   minH={'full'} zIndex='1'
                   display={{ base: 'none', lg: 'flex' }}
-                  alignItems='center' ref={menuRef} setMenuPhone={false}
+                  alignItems='center' ref={menuRef}
           >
             <NavButton variant="navbutton" to="/">Home</NavButton>
             <DevProjectsMenu />
@@ -74,6 +75,7 @@ useEffect(() => {
                   <Route path="/js-scripts" element={<JsScript />} />
                   <Route path="/js-web3-app" element={<Web3App />} />
                   <Route path="/py-scripts" element={<PyScripts />} />
+                  <Route path="/py-discord-bot" element={<PyDiscordBot />} />
                   <Route path="/debian-self-hosted-server" element={<DebianSelfHosted />} />
                   <Route path="/debian-vps" element={<DebianVps />} />
                   <Route path="/contact" element={<Contact />} />

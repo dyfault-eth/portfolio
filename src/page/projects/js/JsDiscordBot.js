@@ -6,6 +6,9 @@ import { atomDark, solarizedlight } from "react-syntax-highlighter/dist/esm/styl
 import { MdContentCopy } from "react-icons/md";
 import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
 import { ScrollToTopButton } from "../../../components/button/ScrollToTopButton";
+import { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import 'github-markdown-css/github-markdown.css';
 
 
 export const JsDiscordBot = () => {
@@ -14,6 +17,7 @@ export const JsDiscordBot = () => {
     const toast = useToast({
         position: 'top',
     });
+    const [readmeContent, setReadmeContent] = useState('');
 
     const handleCopyClick = (text) => {
         navigator.clipboard.writeText(text);
@@ -25,6 +29,13 @@ export const JsDiscordBot = () => {
             isClosable: true,
           });
     };
+
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/dyfault-eth/stables-discord-bot/main/README.md')
+          .then(response => response.text())
+          .then(text => setReadmeContent(text))
+          .catch(error => console.error(error));
+    }, []);
     
     // bitcoin discord bot content
     const bitcoinBotContent = 
@@ -257,14 +268,30 @@ export const JsDiscordBot = () => {
                 This Discord bot is a project that retrieves the latest listing and sales information from an NFT collection called Stables on the Rarible website 
                 using API requests, and sends it to a predefined Discord channel. It provides information about the latest listings and sales of the Stables collection.
             </Text>
-
         </Stack>
+
+        <Center>
+            <SimpleGrid columns={2} mt='24px' gap={2}>
+                <Button as={SkipNavLink} id='result-example' href='result-example' variant='skipnavbutton'>Skip to result on server</Button>
+                <Button as={SkipNavLink} id='code' href='code' variant='skipnavbutton'>Skip to code</Button>
+            </SimpleGrid>
+        </Center>
+
+        <Stack mt='16px'>
+            <Box textAlign='left' className='markdown-body' bg={colorMode === 'dark' ? '#1a202c' : 'rgb(255, 255, 255)'} color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}>
+                <ReactMarkdown>{readmeContent}</ReactMarkdown>
+            </Box>
+        </Stack>
+
+        <SkipNavContent id='result-example' />
 
         <Stack mt='16px'>
             <Text>Example : </Text>
             <Center>
                 <Image w='550px' src='./images/stables-discord-bot/stables-bot-on-server.png'></Image>
             </Center>
+
+            <SkipNavContent id='code' />
 
             <Box position='relative'>
             <Text mt="16px">Code example of the stables discord bot : </Text>

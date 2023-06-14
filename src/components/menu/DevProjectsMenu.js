@@ -68,6 +68,10 @@ export const DevProjectsMenu = () => {
                             <NavButton variant="projectnavbutton" to="/py-scripts">Scripts</NavButton>
                         </Center>
 
+                        <Center>
+                            <NavButton variant="projectnavbutton" to="/py-discord-bot">Discord Bot</NavButton>
+                        </Center>
+
                     </DrawerBody>
 
                 </DrawerContent>

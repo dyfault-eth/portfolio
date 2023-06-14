@@ -41,10 +41,9 @@ export const Web3App = () => {
                 <Button variant="urlbutton" marginLeft="-0.6rem" as="a" href="https://app.dyfault.com" target="_blank" rel="noreferrer">here</Button> 
                 </Center>
 
-            <Center>
-                <Divider w='300px' />
-            </Center>
-
+                <Center>
+                    <Divider w='300px' />
+                </Center>
             </Stack>
 
             <Stack mt='16px'>
@@ -53,14 +52,13 @@ export const Web3App = () => {
                 </Center>
 
                 <Text>
-                This is my first web project.I created it with the aim of learning React.js and gaining the ability to build a website.
-                The purpose of this project is to create a community web application
-                for one or multiple projects in cryptocurrency,
-                which means that this site directly interacts with the Polygon blockchain.In this project, I also use Redux Toolkit,
-                which I have learned to use, as well as Chakra UI and other libraries related to Web3,
-                particularly WalletConnect with Web3Modal to connect any type of wallet.This project is intended to evolve over time. 
+                    This is my first web project.I created it with the aim of learning React.js and gaining the ability to build a website.
+                    The purpose of this project is to create a community web application
+                    for one or multiple projects in cryptocurrency,
+                    which means that this site directly interacts with the Polygon blockchain.In this project, I also use Redux Toolkit,
+                    which I have learned to use, as well as Chakra UI and other libraries related to Web3,
+                    particularly WalletConnect with Web3Modal to connect any type of wallet.This project is intended to evolve over time. 
                 </Text>
-
             </Stack>
 
             <Stack>
