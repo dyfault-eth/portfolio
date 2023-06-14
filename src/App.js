@@ -8,7 +8,6 @@ import { SrvProjectsMenu } from './components/menu/SrvProjectsMenu';
 import { ToggleColorMode } from './components/menu/ToggleColorMode';
 import { Home } from './page/Home';
 import { JsDiscordBot } from './page/projects/js/JsDiscordBot';
-import { JsScript } from './page/projects/js/JsScript';
 import { JsWeb3Bot } from './page/projects/js/JsWeb3Bot';
 import { Web3App } from './page/projects/js/Web3App';
 import { PyScripts } from './page/projects/py/PyScripts';
