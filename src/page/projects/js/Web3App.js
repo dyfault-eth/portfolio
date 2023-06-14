@@ -114,9 +114,9 @@ export const Web3App = () => {
 
             <SkipNavContent id = 'btchist'/>
 
-                <Center>
-                    <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' / >
-                </Center>
+            <Center>
+                <Divider w={['350px', null, '650px', '750px', '850px', '950px']} mt='24px' / >
+            </Center>
 
             <Box position='relative' >
                 <Center mt='24px' >
