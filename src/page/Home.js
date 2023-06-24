@@ -46,10 +46,10 @@ export const Home = () => {
                 </Center>
 
                 <Center>
-                    <SimpleGrid mt='16px' columns='3' gap={6}>
-                        <Image w='100px' src="./images/logo/bitcoin.png" alt="logo bitcoin" title="bitcoin" />
-                        <Image w='100px' src="./images/logo/ethereum.png" alt="logo ethereum" title="ethereum" />
-                        <Image w='100px' borderRadius='50%' src="./images/logo/matic.png" alt="logo matic" title="matic" />
+                    <SimpleGrid mt='16px' columns='3' gap={{base: 6, md: 8}}>
+                        <Image w={{base: '32px', md: '65px', lg: '75px', xl: '90px'}} src="./images/logo/bitcoin.png" alt="logo bitcoin" title="bitcoin" />
+                        <Image w={{base: '32px', md: '65px', lg: '75px', xl: '90px'}} src="./images/logo/ethereum.png" alt="logo ethereum" title="ethereum" />
+                        <Image w={{base: '32px', md: '65px', lg: '75px', xl: '90px'}} borderRadius='50%' src="./images/logo/matic.png" alt="logo matic" title="matic" />
                     </SimpleGrid>
                 </Center>
             </Stack>

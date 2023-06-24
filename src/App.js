@@ -36,15 +36,15 @@ function App() {
   useEffect(() => {
     getMenuWidth()
     setWidthLoad(true)
-  })
+  }, [])
 
   return (
     <Box>
-      <Flex w='100%' maxW='100%' bg={colorMode === "dark" ? "#13181f" : "gray.100"} py={4} px={8} justify="space-between" align="center" position={'fixed'} left={0} right={0} zIndex={2}>
+      <Flex w='100%' maxW='100%' bg={colorMode === "dark" ? "#13181f" : "gray.100"} py={4} px={8} justify="space-between" align="center" alignItems='center' position={'fixed'} left={0} right={0} zIndex={2}>
         <Box bg={colorMode === "dark" ? "#13181f" : "gray.100"} display={{base: 'block', lg: 'none'}}>
           <MenuPhone />
         </Box>
-        <Text className='font-2' fontSize="24px" h='24px'>Alexis</Text>
+        <Text className='font-2' fontSize="24px">Alexis</Text>
         <Text className='font-2' fontSize="24px">My Portfolio</Text>
       </Flex>
 
