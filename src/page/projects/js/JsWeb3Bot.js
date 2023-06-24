@@ -176,14 +176,14 @@ Battle Common complete. Transaction hash: 0xca8ac12f49168e76b95394bc2a8b643979b3
                 <Text>Project presentation : </Text>
                 </Center>
 
-                <Text textAlign='left'>
+                <Text textAlign='center'>
                     The purpose of this project is to automate every step of the future FLAG project game, 
                     currently in the testnet phase (testnet = on a test blockchain that does not involve real money). 
                     For this project, I am using Node.js with the web3js library, similar to what I have done in other projects, 
                     except that this project is the first one where I am performing transactions on the blockchain using a bot.
                 </Text>
 
-                <Text>
+                <Text textAlign='center'>
                     Currently, this bot checks the level of characters and their drink status, and then sends the characters to battle. 
                     If the characters are at level 1, they are sent to a common brothel that provides them with a bonus, and then to a common battle. 
                     In each cycle, the level of the characters and the drink reserve are checked. When they reach level 31 or higher, 

@@ -15,7 +15,7 @@ export const Home = () => {
 
                 <Text textAlign='center'>My Presentation : </Text>
 
-                <Text mt='8px'>
+                <Text textAlign='center' mt='8px'>
                 Allow me to introduce myself, my name is Alexis and I'm 22 years old. 
                 I completed a 2-year training program in computer science specialized in systems and networks at a training center in France, and I graduated in June 2022.
                 <br/><br/>

@@ -51,7 +51,7 @@ export const Web3App = () => {
                     <Text> Project presentation: </Text> 
                 </Center>
 
-                <Text>
+                <Text textAlign='center'>
                     This is my first web project.I created it with the aim of learning React.js and gaining the ability to build a website.
                     The purpose of this project is to create a community web application
                     for one or multiple projects in cryptocurrency,
@@ -62,7 +62,7 @@ export const Web3App = () => {
             </Stack>
 
             <Stack>
-                <Text mt='16px'>
+                <Text textAlign='center' mt='16px'>
                     Due to Coingecko 's increasing limitations on free API requests for cryptocurrency prices and graphs, 
                     I have implemented three Node.js scripts that make API calls at specific intervals.
                     These scripts retrieve the data and write the responses to JSON files located at the root of my website.

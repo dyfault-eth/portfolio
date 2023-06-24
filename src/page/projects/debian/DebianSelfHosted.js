@@ -51,7 +51,7 @@ screen -dmS web3-bot ./start.sh`
                 <Text>Project presentation: </Text> 
             </Center>
 
-            <Text mt='16px' textAlign='left'>
+            <Text mt='16px' textAlign='center'>
                 This server is a Raspberry Pi 4 running Raspbian. I utilize it to host a personal cloud server that employs an Apache web server. 
                 Additionally, my Raspberry Pi serves as the hosting platform for all my Discord bots. 
                 To generate the SSL certificate for my cloud server, I use Certbot. For running my Discord bots, 

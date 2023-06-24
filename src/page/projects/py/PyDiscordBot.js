@@ -30,7 +30,7 @@ export const PyDiscordBot = () => {
                 <Text> Project presentation: </Text> 
             </Center>
 
-            <Text>
+            <Text textAlign='center'>
                 This project is a Discord bot with multiple commands that make API requests to various platforms such as Coingecko, Opensea, 
                 and the Fear and Greed Index. Among the different Discord bots featured on this site, this is the first one I created. 
                 The bot's different commands are used to retrieve the prices of different cryptocurrencies, 

@@ -53,7 +53,7 @@ export const JsDiscordBot = () => {
 
         <Stack mt='12px'>
             <Text textAlign="center">Project presentation :</Text>
-            <Text textAlign="left" py={2}>
+            <Text textAlign="center" py={2}>
                 This Discord bot sends a daily graph of Bitcoin's price over the past 7 days to a preconfigured channel by making an API request to fetch the price data. 
                 On the 30th day of every month, it sends a graph illustrating Bitcoin's price evolution throughout the month. Each night at 1:05 AM, it delivers 
                 the updated Fear and Greed Index value. Additionally, at the end of each week, it generates a bar chart summarizing the week's information.
@@ -155,7 +155,7 @@ export const JsDiscordBot = () => {
         
         <Stack mt='24px'>
             <Text textAlign="center">Project presentation :</Text>
-            <Text textAlign='left' py={2}>
+            <Text textAlign='center' py={2}>
                 This Discord bot is a project that interacts with the blockchain using the web3.js library. It has multiple commands. 
                 The first one is /flag, which takes an argument representing your crypto wallet on the Polygon blockchain. 
                 It retrieves your balance of the FLAG cryptocurrency from the For Loot And Glory project, 
@@ -264,7 +264,7 @@ export const JsDiscordBot = () => {
             </Center>
 
             <Text mt='24px'>Project presentation :</Text>
-            <Text textAlign='left' py={2}>
+            <Text textAlign='center' py={2}>
                 This Discord bot is a project that retrieves the latest listing and sales information from an NFT collection called Stables on the Rarible website 
                 using API requests, and sends it to a predefined Discord channel. It provides information about the latest listings and sales of the Stables collection.
             </Text>
