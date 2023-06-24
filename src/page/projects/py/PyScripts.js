@@ -128,7 +128,7 @@ export const PyScripts = () => {
 
         <Stack>
             <Center>
-                <Text fontWeight='bold' fontSize='xl'>Python Scripts</Text>
+                <Text className="font-2" fontSize='24px'>Python Scripts</Text>
             </Center>
             <Divider />
         </Stack>

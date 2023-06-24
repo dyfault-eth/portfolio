@@ -29,7 +29,7 @@ export const Web3App = () => {
 
             <Stack>
                 <Center>
-                    <Text fontWeight='bold' fontSize='xl'> Web3 App </Text> 
+                    <Text className="font-2" fontSize='24px'>Web3 App</Text> 
                 </Center> 
                 <Divider />
             </Stack>

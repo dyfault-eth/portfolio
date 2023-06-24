@@ -9,7 +9,7 @@ export const DebianVps = () => {
 
             <Stack>
                 <Center>
-                    <Text fontWeight='bold' fontSize='xl'> VPS Server</Text> 
+                    <Text className="font-2" fontSize='24px'> VPS Server</Text> 
                 </Center> 
                 <Divider />
             </Stack>

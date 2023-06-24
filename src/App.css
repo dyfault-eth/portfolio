@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Gameplay';
+    src: local('Gameplay'), url(./fonts/Gameplay.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'GameOver';
+    src: local('game_over'), url(./fonts/game_over.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'ArcadeClassic';
+    src: local('arcadeclassic'), url(./fonts/arcadeclassic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: local('LLPIXEL3'), url(./fonts/LLPIXEL3.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'EHSMB';
+    src: local('EHSMB'), url(./fonts/EHSMB.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'CFLCD';
+    src: local('CFLCD-Regular'), url(./fonts/CFLCD-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'LCD';
+    src: local('LCDM2B'), url(./fonts/LCDMonoWinTT/LCDM2B__.TTF) format('truetype');
+}
+
+@font-face {
+    font-family: 'LCD-digital';
+    src: local('DS-DIGI'), url(./fonts/digital/DS-DIGI.TTF) format('truetype');
+}
+
+.font-1 {
+    font-family: EHSMB;
+}
+
+.font-2 {
+    font-family: LCD-digital;
+}

@@ -8,7 +8,7 @@ export const PyDiscordBot = () => {
     <Box w={['375px', null, '650px', '750px', '1000px', '1250px']}>
         <Stack>
             <Center>
-                <Text fontWeight='bold' fontSize='xl'> Python Discord Bot </Text>
+                <Text className="font-2" fontSize='24px'> Python Discord Bot </Text>
             </Center> 
             <Divider />
         </Stack>

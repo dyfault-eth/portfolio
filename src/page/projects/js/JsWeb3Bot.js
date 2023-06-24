@@ -167,7 +167,7 @@ Battle Common complete. Transaction hash: 0xca8ac12f49168e76b95394bc2a8b643979b3
 
                 <Stack>
                     <Center>
-                        <Text fontWeight='bold' fontSize='xl'>Web3 Bot</Text>
+                        <Text className="font-2" fontSize='24px'>Web3 Bot</Text>
                     </Center>
                     <Divider />
                 </Stack>

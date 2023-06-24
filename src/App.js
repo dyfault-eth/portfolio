@@ -33,10 +33,10 @@ function App() {
     }
   };
 
-useEffect(() => {
-  getMenuWidth()
-  setWidthLoad(true)
-})
+  useEffect(() => {
+    getMenuWidth()
+    setWidthLoad(true)
+  })
 
   return (
     <Box>
@@ -44,8 +44,8 @@ useEffect(() => {
         <Box bg={colorMode === "dark" ? "#13181f" : "gray.100"} display={{base: 'block', lg: 'none'}}>
           <MenuPhone />
         </Box>
-        <Text fontSize="xl" fontWeight="bold">Alexis</Text>
-        <Text fontSize="xl">My Portfolio</Text>
+        <Text className='font-2' fontSize="24px" h='24px'>Alexis</Text>
+        <Text className='font-2' fontSize="24px">My Portfolio</Text>
       </Flex>
 
       <Flex>

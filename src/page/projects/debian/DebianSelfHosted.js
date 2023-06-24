@@ -42,7 +42,7 @@ screen -dmS web3-bot ./start.sh`
 
             <Stack>
                 <Center>
-                    <Text fontWeight='bold' fontSize='xl'>Self Hosted Server</Text> 
+                    <Text className="font-2" fontSize='24px'>Self Hosted Server</Text> 
                 </Center> 
                 <Divider />
             </Stack>
