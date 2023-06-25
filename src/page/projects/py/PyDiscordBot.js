@@ -38,6 +38,10 @@ export const PyDiscordBot = () => {
                 or obtain indicators such as the total market cap of the crypto market or the Fear and Greed Index. Additionally, underneath each response from the bot, 
                 there is a button to rerun the same command, eliminating the need to retype it each time.
             </Text>
+
+            <Center>
+                <Button w='250px' variant='appbutton' as='a' href='https://discord.gg/TCpqQv8Nxg' target="_blank" rel="noreferrer">Live demo</Button>
+            </Center>
         </Stack>
 
         <Center mt='16px'>

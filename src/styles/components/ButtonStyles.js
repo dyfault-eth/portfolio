@@ -73,6 +73,15 @@ export const ButtonStyles = {
             }
         }),
 
+        appbutton: (props) => ({
+            width: '250px',
+            textAlign: 'center',
+            borderRadius: '6.5px',
+            _hover: {
+                bg: mode("rgba(0, 0, 0, 0.1)", "#212837")(props),
+            }
+        }),
+
         defaultStyle: {},
     }
 }

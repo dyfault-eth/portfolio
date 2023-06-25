@@ -59,6 +59,10 @@ export const JsDiscordBot = () => {
                 the updated Fear and Greed Index value. Additionally, at the end of each week, it generates a bar chart summarizing the week's information.
                 I've created a second bot for the token FLAG similar to this one without Fear and Greed features.
             </Text>
+
+            <Center>
+                <Button w='250px' variant='appbutton' as='a' href='https://discord.gg/TCpqQv8Nxg' target="_blank" rel="noreferrer">Live demo</Button>
+            </Center>
         </Stack>
 
         <Center>
@@ -172,6 +176,10 @@ export const JsDiscordBot = () => {
                 <br/><br/>
                 PS : Every command send you the result in dm
             </Text>
+
+            <Center>
+                <Button w='250px' variant='appbutton' as='a' href='https://discord.gg/TCpqQv8Nxg' target="_blank" rel="noreferrer">Live demo</Button>
+            </Center>
         </Stack>
 
         <Center>
@@ -268,6 +276,10 @@ export const JsDiscordBot = () => {
                 This Discord bot is a project that retrieves the latest listing and sales information from an NFT collection called Stables on the Rarible website 
                 using API requests, and sends it to a predefined Discord channel. It provides information about the latest listings and sales of the Stables collection.
             </Text>
+
+            <Center>
+                <Button w='250px' variant='appbutton' as='a' href='https://discord.gg/TCpqQv8Nxg' target="_blank" rel="noreferrer">Live demo</Button>
+            </Center>
         </Stack>
 
         <Center>

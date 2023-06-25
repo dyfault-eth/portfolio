@@ -2,7 +2,7 @@ import { Box, Center, Stack, Text, Divider, useColorMode, IconButton, useToast, 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { MdContentCopy } from "react-icons/md";
-import { cryptoPriceBash, cryptoPriceJS, btcHistBash, btcHistJS, fearHistBash, fearHistJS, cryptoPriceFront } from "../../../components/page-content/codepart/CodePartOfWeb3App";
+import { cryptoPriceCron, logFile, cryptoPriceJS, btcHistBash, btcHistJS, fearHistBash, fearHistJS, cryptoPriceFront } from "../../../components/page-content/codepart/CodePartOfWeb3App";
 import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
 import { ScrollToTopButton } from "../../../components/button/ScrollToTopButton";
 
@@ -24,6 +24,28 @@ export const Web3App = () => {
         });
     };
 
+    const logFileColored = (
+        <Box>
+            <Text color='blue'>25/06/2023 16:30:07</Text>
+            <Text color='red'>TypeError: Cannot read properties of undefined (reading 'usd')</Text>
+            <Text color='red'>TypeError: Cannot read properties of undefined (reading 'usd')</Text>
+            <Text color='red'>TypeError: Cannot read properties of undefined (reading 'usd')</Text>
+            <Text color='red'>TypeError: Cannot read properties of undefined (reading 'usd')</Text>
+            <Text color='red'>TypeError: Cannot read properties of undefined (reading 'usd')</Text>
+            <Text color='blue'>25/06/2023 17:00:03</Text>
+            <Text color={colorMode === 'light' ? '#657b83' : '#c5c8c6'}>30594</Text>
+            <Text color='green'>crypto bitcoin successfully saved</Text>
+            <Text color={colorMode === 'light' ? '#657b83' : '#c5c8c6'}>1893.79</Text>
+            <Text color='green'>crypto ethereum successfully saved</Text>
+            <Text color={colorMode === 'light' ? '#657b83' : '#c5c8c6'}>0.670255</Text>
+            <Text color='green'>crypto matic-network successfully saved</Text>
+            <Text color={colorMode === 'light' ? '#657b83' : '#c5c8c6'}>6.22</Text>
+            <Text color='green'>crypto chainlink successfully saved</Text>
+            <Text color={colorMode === 'light' ? '#657b83' : '#c5c8c6'}>160.39</Text>
+            <Text color='green'>crypto monero successfully saved</Text>
+        </Box>
+    )
+
     const content = 
         <Box w={['375px', null, '650px', '750px', '1000px', '1250px']}>
 
@@ -36,7 +58,7 @@ export const Web3App = () => {
 
             <Stack>
                 <Center mt='12px' display="flex" alignItems='center'>
-                    You can check the project
+                    You can check the website
 
                 <Button variant="urlbutton" marginLeft="-0.6rem" as="a" href="https://app.dyfault.com" target="_blank" rel="noreferrer">here</Button> 
                 </Center>
@@ -83,11 +105,20 @@ export const Web3App = () => {
 
             <Box position='relative'>
                 <Center mt='24px' >
-                    Example of crypto - prices Bash script:
+                    Example of crypto - prices in cron file:
                 </Center>
 
-            <SyntaxHighlighter language="bash" style={ colorMode === 'dark' ? atomDark : solarizedlight } customStyle={{ fontSize: '14px'}}>{cryptoPriceBash}</SyntaxHighlighter> 
-            <IconButton onClick = {() => handleCopyClick(cryptoPriceBash)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />}/> 
+                <SyntaxHighlighter language="bash" style={ colorMode === 'dark' ? atomDark : solarizedlight } customStyle={{ fontSize: '14px'}}>{cryptoPriceCron}</SyntaxHighlighter> 
+                <IconButton onClick = {() => handleCopyClick(cryptoPriceCron)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />}/> 
+            </Box>
+
+            <Box position='relative'>
+                <Center mt='24px' >
+                    Example of crypto - prices log file:
+                </Center>
+
+                <Text bg={ colorMode === 'dark' ? '#1d1f21' : '#fdf6e3' } customStyle={{ fontSize: '14px'}}>{logFileColored}</Text> 
+                <IconButton onClick = {() => handleCopyClick(logFile)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />}/> 
             </Box>
 
             <Box position='relative'>
