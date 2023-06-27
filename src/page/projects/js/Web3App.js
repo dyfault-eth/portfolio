@@ -88,6 +88,12 @@ export const Web3App = () => {
                     Due to Coingecko 's increasing limitations on free API requests for cryptocurrency prices and graphs, 
                     I have implemented three Node.js scripts that make API calls at specific intervals.
                     These scripts retrieve the data and write the responses to JSON files located at the root of my website.
+                    <br/>
+                    I encountered a minor issue while executing my scripts using the cron file on my server. 
+                    In fact, each time the scripts were not terminating and remained running in the background. 
+                    I discovered this when my server sent me an alert saying "Warning: 100% CPU usage". To address this, 
+                    I added a few lines to my script after the getPrice() function finishes executing, to ensure that the code stops and doesn't remain in the background.
+
                     In the frontend, I have a
                     function called within my Redux implementation that retrieves the data from these JSON files.
                     This approach allows me to work around the API limitations and ensure consistent access to the cryptocurrency data
@@ -118,7 +124,7 @@ export const Web3App = () => {
                 </Center>
 
                 <Text bg={ colorMode === 'dark' ? '#1d1f21' : '#fdf6e3' } customStyle={{ fontSize: '14px'}}>{logFileColored}</Text> 
-                <IconButton onClick = {() => handleCopyClick(logFile)} position="absolute" top="63px" right="8px" size="sm" icon={<MdContentCopy />}/> 
+                <IconButton onClick = {() => handleCopyClick(logFile)} position="absolute" top="55px" right="8px" size="sm" icon={<MdContentCopy />}/> 
             </Box>
 
             <Box position='relative'>

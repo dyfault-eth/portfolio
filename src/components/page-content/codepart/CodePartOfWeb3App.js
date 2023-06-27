@@ -8,6 +8,8 @@ const blue = '\\x1b[34m'
 const green = '\\x1b[32m'
 const reset = '\\x1b[0m'
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 async function getPrice() {
 
     const crypto = ["bitcoin", "ethereum", "matic-network", "chainlink", "monero"]
@@ -28,6 +30,8 @@ async function getPrice() {
                 }
                 console.log(\`\${green}crypto \${crypto[i]} successfully saved\${reset}\`);
             })
+
+            await sleep(3000);
         } catch (e) {
             console.log(\`\${red}\${e}\${reset}\`)
         }
@@ -45,7 +49,12 @@ const seconds = String(date.getSeconds()).padStart(2, '0');
 
 console.log(\`\${blue}\${day}/\${month}/\${year} \${hours}:\${minutes}:\${seconds}\${reset}\`)
 
-getPrice()`
+getPrice().then(() => {
+    process.exit();
+}).catch((error) => {
+    console.error(\`\${red}\${error}\${reset}\`);
+    process.exit(1);
+});`
 
 export const logFile = `^[[34m25/06/2023 16:30:07^[[0m
 ^[[31mTypeError: Cannot read properties of undefined (reading 'usd')^[[0m
