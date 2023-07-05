@@ -2,7 +2,6 @@ import { FormControl, FormLabel, FormErrorMessage, Input, Textarea, Button, useT
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import emailjs from "@emailjs/browser"
 
 
 export const Contact = () => {
@@ -19,28 +18,39 @@ export const Contact = () => {
     });
 
     const onSubmit = async (data) => {
+      const subject = data.subject
+      const email = data.email
+      const message = data.message
+
       if (isHcaptchaVerified && isEmailError === false && isSubjectError === false) {
         
-        emailjs.send(
-          process.env.REACT_APP_MAIL_ID,
-          process.env.REACT_APP_TEMP_ID,
-          {
-            subject: data.subject,
-            email: data.email,
-            message: data.message,
+        const response = await fetch('https://portfolio.dyfault.com/contactform', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
           },
-          process.env.REACT_APP_API_KEY
-        )
-        setEmail("");
-        setSubject("");
-        reset();
-        toast({
-          title: "Success",
-          description: "Your message was successfully sent",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
+          body: JSON.stringify({ subject, email, message })
         });
+        if(response.ok) {
+          setEmail("");
+          setSubject("");
+          reset();
+          toast({
+            title: "Success",
+            description: "Your message was successfully sent",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          });
+        } else {
+          toast({
+            title: "Error",
+            description: "Send email error. Please try again",
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+          });
+        }
       } else {
           toast({
             title: "Error",
