@@ -21,7 +21,7 @@ export const DebianVps = () => {
             <Text mt='16px' textAlign='center'>
                 This server is a VPS that I rent. Initially, I chose it to host my web3 application and this portfolio. 
                 This has allowed me to learn how to set up a reverse proxy to host multiple websites with a single server. 
-                To run my two sites, I use pm2, and it's my first time using nginx as a web server. Finally, the wildcard SSL certificate was generated using certbot.
+                To run my two sites, I use pm2 as web server, and it's my first time using nginx as reverse proxy. Finally, the wildcard SSL certificate was generated using certbot.
             </Text>
 
             <Center mt='16px'>
