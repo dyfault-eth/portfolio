@@ -52,23 +52,18 @@ screen -dmS web3-bot ./start.sh`
             </Center>
 
             <Text mt='16px' textAlign='center'>
-                I run a personal cloud server on a Raspberry Pi 4 with Raspbian as the operating system. 
-                The server utilizes an Apache web server for hosting, and it also serves as the hosting platform for my Discord bots. 
-                To secure my cloud server, I generate SSL certificates using Certbot. For managing the server, I have installed Webmin, 
-                which allows me to configure Apache as a web server and Nginx as a reverse proxy. 
-                I made changes to the Apache configuration to run my ownCloud on a local port with Apache, 
-                and then I added Nginx as a reverse proxy on ports 80 and 443 for ownCloud and Webmin, respectively, 
-                each hosted on separate subdomains.
+                This server is a personal server, a Raspberry Pi 4 with Raspbian as the operating system. 
+                Initially, the purpose of this server was to have a personal cloud server. 
+                Later on, I added Discord bots launched by bash scripts using the 'screen' command, as well as Webmin. 
+                Additionally, I configured Apache to function as a local web server and used Nginx as a reverse proxy to access my cloud server over the internet. 
+                This allowed me to expose my Webmin interface on the internet through Apache, which was already serving my cloud server. 
+                For the wildcard SSL certificate, I use Certbot.
             </Text>
 
             <Text mt='16px' textAlign='center'>
-                To enhance security, I implemented Fail2ban with different jails. 
-                One jail is dedicated to the Webmin web interface, permanently banning IP addresses after three failed login attempts. 
-                Similarly, ownCloud has its own jail that also permanently bans after three failed login attempts. 
-                Additionally, I have deployed CrowdSec, a security tool, along with its web-based administration console. 
-                This setup ensures the reliable operation and secure management of my Raspberry Pi-based server. 
-                With these measures in place, I can administer my server effectively and have peace of mind knowing that the necessary security 
-                precautions are in place to protect my personal cloud server and ensure the smooth functioning of my Discord bots.
+                In terms of security, I installed Fail2ban with two custom jails. One is for OwnCloud, and the other is for Webmin. 
+                Both of them permanently ban any IP address after three unsuccessful connection attempts. 
+                Moreover, I have installed another intrusion prevention system called CrowdSec to block attacks that may not be caught by Fail2ban.
             </Text>
 
             <Center>
