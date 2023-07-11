@@ -54,10 +54,9 @@ screen -dmS web3-bot ./start.sh`
             <Text mt='16px' textAlign='center'>
                 This server is a personal server, a Raspberry Pi 4 with Raspbian as the operating system. 
                 Initially, the purpose of this server was to have a personal cloud server. 
-                Later on, I added Discord bots launched by bash scripts using the 'screen' command, as well as Webmin. 
+                Later on, I added Discord bots launched by bash scripts using the 'screen' command. 
                 Additionally, I configured Apache to function as a local web server and used Nginx as a reverse proxy to access my cloud server over the internet. 
-                This allowed me to expose my Webmin interface on the internet through Apache, which was already serving my cloud server. 
-                For the wildcard SSL certificate, I use Certbot.
+                This allowed me to expose my Webmin interface and Cloud on the internet through Nginx. For the wildcard SSL certificate, I use Certbot.
             </Text>
 
             <Text mt='16px' textAlign='center'>
